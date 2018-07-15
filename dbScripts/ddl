@@ -33,13 +33,66 @@ CREATE TABLE `Line` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
+CREATE TABLE `Train` (
+  `trainId` varchar(45) NOT NULL,
+  `trainType` varchar(45) NOT NULL,
+  `wCnt` int(11) NOT NULL,
+  `wSeatCnt` int(11) NOT NULL,
+  `zCnt` int(11) NOT NULL,
+  `zSeatCnt` int(11) NOT NULL,
+  PRIMARY KEY (`trainId`),
+  UNIQUE KEY `trainId_UNIQUE` (`trainId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `Order` (
+  `orderId` int(11) NOT NULL,
+  `userId` varchar(45) NOT NULL,
+  `ticketId` varchar(45) DEFAULT NULL,
+  `orderTime` datetime(6) DEFAULT NULL,
+  PRIMARY KEY (`orderId`),
+  UNIQUE KEY `orderId_UNIQUE` (`orderId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `Operation` (
+  `LineId` int(11) NOT NULL,
+  `TrainId` varchar(45) NOT NULL,
+  `Date` date NOT NULL,
+  PRIMARY KEY (`LineId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
+CREATE TABLE `MilPrice` (
+  `mileage` int(11) NOT NULL,
+  `kzPrice` double NOT NULL,
+  `kwPrice` double NOT NULL,
+  `tzPrice` double NOT NULL,
+  `twPrice` double NOT NULL,
+  `gzPrice` double NOT NULL,
+  `gwPrice` double NOT NULL,
+  PRIMARY KEY (`mileage`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
+CREATE TABLE `Distance` (
+  `start` varchar(45) NOT NULL,
+  `end` varchar(45) NOT NULL,
+  `dis` int(11) NOT NULL,
+  PRIMARY KEY (`start`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
-
+CREATE TABLE `Booking` (
+  `ticketNo` int(11) NOT NULL,
+  `lineNo` int(11) DEFAULT NULL,
+  `seatType` varchar(45) DEFAULT NULL,
+  `carrigeNo` int(11) DEFAULT NULL,
+  `seatNo` varchar(45) DEFAULT NULL,
+  `marginCode` binary(6) DEFAULT NULL,
+  `marginTicket` int(11) DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  PRIMARY KEY (`ticketNo`),
+  UNIQUE KEY `ticketNo_UNIQUE` (`ticketNo`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 
