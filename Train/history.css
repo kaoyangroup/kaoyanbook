@@ -1,0 +1,81 @@
+@charset "utf-8";
+#index {
+	list-style-type: none;
+	padding-left: 0px;
+}
+#indexid {
+	background-image: url(Tu/%E5%AD%90%E9%A1%B5%E9%9D%A2%E8%83%8C%E6%99%AF2.0.png);
+	color: white;
+}
+#indexid #index #title {
+	color: #CCC;
+}
+#click #button1 {
+	float: right;
+	width: 100px;
+	height: 35px;
+	font-family: "微软雅黑";
+    font-size: 20px;   
+    display: inline-block;
+    cursor: pointer;
+    zoom: 1;
+    outline-width: medium;
+    outline-color: invert;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    box-shadow: 0px 1px 2px rgba(0,0,0,0.2);
+    text-shadow: 0px 1px 1px rgba(0,0,0,0.3);
+    color: #fefee9;
+    border-top-color: #445567;
+    border-right-color: #445567;
+    border-bottom-color: #445567;     
+	border-left-color: #445567;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    background-origin: padding-box;
+    background-clip: padding-box;
+    background-color: #445565;
+}
+#click #button2 {
+	float: right;
+	margin-left:20px;
+	width: 100px;
+	height: 35px;
+	font-family: "微软雅黑";
+    font-size: 20px;   
+    display: inline-block;
+    cursor: pointer;
+    zoom: 1;
+    outline-width: medium;
+    outline-color: invert;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    box-shadow: 0px 1px 2px rgba(0,0,0,0.2);
+    text-shadow: 0px 1px 1px rgba(0,0,0,0.3);
+    color: #fefee9;
+    border-top-color: #445567;
+    border-right-color: #445567;
+    border-bottom-color: #445567;     
+	border-left-color: #445567;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    background-origin: padding-box;
+    background-clip: padding-box;
+    background-color: #445565;
+}
