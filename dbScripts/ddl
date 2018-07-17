@@ -149,7 +149,7 @@ INSERT INTO `line` (`lineId`, `station`, `arrOrder`, `arrTime`, `arrDate`) VALUE
 ('T002', '拉萨', 3, '06:00:00', '次日'),
 ('T002', '西宁', 2, '14:00:00', '当日');
 
-INSERT INTO `mileprice` (`start`, `end`, `lineType`, `seatType`, `price`) VALUES
+INSERT INTO `Mileprice` (`start`, `end`, `lineType`, `seatType`, `price`) VALUES
 ('北京', '上海', 'G', '卧票', 605),
 ('北京', '上海', 'G', '坐票', 555),
 ('北京', '上海', 'K', '卧票', 235),
