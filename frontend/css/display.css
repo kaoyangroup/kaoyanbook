@@ -1,0 +1,7 @@
+.displaytable table tbody tr td a {
+	text-decoration: none;
+}
+.displaytable {
+	margin-top: 80px;
+	margin-left: 350px;
+}

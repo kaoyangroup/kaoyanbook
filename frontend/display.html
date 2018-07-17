@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>表格数据显示代码</title>
+<link rel="stylesheet" type="text/css" href="display.css">
+</head>
+
+<body>
+	
+<div class=displaytable>
+    <p>查询结果:</p>
+    <table border="1" cellpadding="3" cellspacing="20">
+      <thead>
+        <tr>
+          <th>车次</th>
+          <th width="50">出发站</th>
+          <th>到达站</th>
+          <th>出发时间</th>
+          <th>到达时间</th>
+          <th>卧铺</th>
+          <th>硬座</th>
+          <th>无座</th>
+          <th>备注</th>
+        </tr>
+      </thead>
+        
+        
+      <tbody>
+        <tr>
+          <td align="center" width="46" style="cursor:pointer;" class="yes" onclick="showticketprice(this)">有</td>
+          <td align="center" width="46" style="cursor:pointer;" onclick="showticketprice(this)">无</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td align="center" width="80">
+           <a href="javascript:" onclick = "">"预订"</a></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+          
+      <tfoot>
+        <tr>
+          
+        </tr>
+      </tfoot>
+    </table>
+	</div>
+
+</body>
+</html>

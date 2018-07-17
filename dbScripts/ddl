@@ -24,7 +24,7 @@ CREATE TABLE `user` (
 CREATE TABLE `Contacts` (
   `cid` varchar(45) NOT NULL,
   `uid` varchar(45) NOT NULL,
-  PRIMARY KEY (`cid`)
+  PRIMARY KEY (`cid`,'uid')
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
