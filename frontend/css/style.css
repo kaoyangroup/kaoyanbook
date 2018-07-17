@@ -7,7 +7,7 @@
 }
 #toptitle {
 	height: 150px;
-	width: 1020px;
+	width: 100%;
 	background-image: url(../image/%E9%A6%96%E9%A1%B5%E6%A0%87%E9%A2%98%E6%A0%8F.jpg);
 	background-repeat: no-repeat;
 	background-position: center center;
@@ -26,7 +26,7 @@
 #topbar {
 	background-color: #445565;
 	float: left;
-	width: 1020px;
+	width: 100%;
 	margin-top: 5px;
 	height: 45px;
 }
@@ -61,12 +61,12 @@ body {
 	margin-right: auto;
 	margin-bottom: 0px;
 	margin-left: auto;
-	width: 1000px;
+	width: 100%;
 }
 #bottom {
 	margin-top: 50px;
 	height: 50px;
-	width: 1020px;
+	width: 100%;
 }
 
 #total #toptitle #topbar ul li a {
