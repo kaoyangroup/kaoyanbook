@@ -24,22 +24,22 @@ if(!$con)
 if(find($con,"select * from user where uid='$uid'") > 0)
 {
 	$regErr = "用户名已被注册";
-	header("Location:login2.php?regErr='$regErr'");
+	header("Location:login2.php?regErr=$regErr");
 }
 else if(find($con,"select * from user where cardNo='$cardNo'") > 0)
 {
 	$regErr = "身份证号已被注册";
-	header("Location:login2.php?regErr='$regErr'");
+	header("Location:login2.php?regErr=$regErr");
 }
 else if(find($con,"select * from user where email='$email'") > 0)
 {
 	$regErr = "邮箱已被注册";
-	header("Location:login2.php?regErr='$regErr'");
+	header("Location:login2.php?regErr=$regErr");
 }
 else if(find($con,"select * from user where mobile='$mobile'") > 0)
 {
 	$regErr = "手机号已被注册";
-	header("Location:login2.php?regErr='$regErr'");
+	header("Location:login2.php?regErr=$regErr");
 }
 else
 {

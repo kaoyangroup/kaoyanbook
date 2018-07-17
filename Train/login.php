@@ -19,7 +19,7 @@ if($num > 0)
 else
 {
 $loginErr = "账户不存在或密码不正确，请重新输入";
-header("Location:login2.php?loginErr='$loginErr'");
+header("Location:login2.php?loginErr=$loginErr");
 }
 ?>
 
