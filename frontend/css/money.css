@@ -1,0 +1,40 @@
+@charset "utf-8";
+#seeMoney {
+	margin-top: 30px;
+	margin-left: 50px;
+}
+#seeMoney #button a input {
+	margin-left: 0px;
+	margin-top: 0px;
+	width: 100px;
+	height: 40px;
+}
+#seeMoney #button {
+	margin-left: 0px;
+	margin-top: 80px;
+	float: left;
+	padding-left: 50px;
+	width: 100px;
+}
+#seeMoney #iframe {
+	margin-top: 200px;
+}
+
+
+#seeMoney #look {
+	margin-left: 0px;
+	margin-top: 80px;
+	width: 340px;
+	float: left;
+	padding-left: 50px;
+}
+#seeMoney #iframe iframe {
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	margin-top: 10px;
+	height: 300px;
+	width: 500px;
+	margin-left: 50px;
+}

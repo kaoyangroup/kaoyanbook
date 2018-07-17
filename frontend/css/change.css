@@ -1,0 +1,19 @@
+@charset "utf-8";
+#changePas input {
+	margin-left: 50px;
+}
+#changePas #center {
+	margin-top: 15px;
+	margin-left: 30px;
+}
+#changePas #center div {
+	margin-top: 30px;
+	margin-left: 60px;
+}
+
+#changePas {
+	font-family: "微软雅黑";
+}
+#changePas #center p span {
+	color: #FFF;
+}
