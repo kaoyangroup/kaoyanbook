@@ -1,3 +1,6 @@
+<?php
+	include_once "../backend/includes/dbh.inc.php";
+?>
 <html>
 <body>
 <?php 
@@ -16,7 +19,6 @@ $email = $_POST["email"];
 $mobile = $_POST["mobile"];
 $userType = $_POST["userType"];
 $account = 0.0;
-$con = mysqli_connect("localhost","root","123456","train");
 if(!$con)
 {
 	die('Count not connect');
@@ -43,11 +45,11 @@ else if(find($con,"select * from user where mobile='$mobile'") > 0)
 }
 else
 {
-$sql = "insert into user values('$uid','$pwd','$name','$cardType','$cardNo','$email','$mobile','$userType','$account')";
-$result = mysqli_query($con,$sql);
-mysqli_close($con);
-setcookie("cur_uid",$uid,time()+3600);
-header("Location:index.html");
+	$sql = "insert into user values('$uid','$pwd','$name','$cardType','$cardNo','$email','$mobile','$userType','$account')";
+	$result = mysqli_query($con,$sql);
+	mysqli_close($con);
+	setcookie("cur_uid",$uid,time()+3600);
+	header("Location:index.html");
 }
 
 ?>
