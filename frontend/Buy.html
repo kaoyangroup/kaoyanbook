@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>客运服务</title>
+<style type="text/css">
+body {
+	background-image: url(image/%E5%AD%90%E9%A1%B5%E9%9D%A2%E8%83%8C%E6%99%AF2.0.png);
+	background-repeat: no-repeat;
+}
+</style>
+<link href="css/Buy.css" rel="stylesheet" type="text/css" />
+<link href="css/datepick.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+<p id="word"> &nbsp;&nbsp;&nbsp;车 票 查 询</p>
+
+<div id="query">
+  <form id="placeA" method="post" action="">
+      <label for="出发地">出发地 &nbsp;&nbsp;</label>
+      <select name="出发地" id="出发地">
+        <option value="北京">北京</option>
+        <option value="石家庄">石家庄</option>
+        <option value="郑州">郑州</option>
+        <option value="武汉">武汉</option>
+        <option value="长沙">长沙</option>
+        <option value="广州">广州</option>
+        <option value="西安">西安</option>
+        <option value="重庆">重庆</option>
+        <option value="成都">成都</option>
+        <option value="沈阳">沈阳</option>
+        <option value="长春">长春</option>
+        <option value="哈尔滨">哈尔滨</option>
+        <option value="济南">济南</option>
+        <option value="青岛">青岛</option>
+        <option value="南京">南京</option>
+        <option value="上海">上海</option>
+        <option value="西宁">西宁</option>
+        <option value="拉萨">拉萨</option>
+        <option value="合肥">合肥</option>
+        <option value="杭州">杭州</option>
+      </select>
+    </form>
+  <form id="placeB" method="post" action="">
+      <label for="目的地">目的地 &nbsp;&nbsp;</label>
+    <select name="目的地" id="目的地">
+        <option value="北京">北京</option>
+        <option value="石家庄">石家庄</option>
+        <option value="郑州">郑州</option>
+        <option value="武汉">武汉</option>
+        <option value="长沙">长沙</option>
+        <option value="广州">广州</option>
+        <option value="西安">西安</option>
+        <option value="重庆">重庆</option>
+        <option value="成都">成都</option>
+        <option value="沈阳">沈阳</option>
+        <option value="长春">长春</option>
+        <option value="哈尔滨">哈尔滨</option>
+        <option value="济南">济南</option>
+        <option value="青岛">青岛</option>
+        <option value="南京">南京</option>
+        <option value="上海">上海</option>
+        <option value="西宁">西宁</option>
+        <option value="拉萨">拉萨</option>
+        <option value="合肥">合肥</option>
+        <option value="杭州">杭州</option>
+      </select>
+    </form>
+
+  <div class="date">出发日 &nbsp;
+    	<input class="laydate-icon" id="demo"> 
+	</div>
+    
+  <form id="click" method="post" action="">
+  		<input type="submit" id="button" value="查  询" />
+  </form>
+</div>
+
+<script type="text/javascript" src="js/laydate.js"></script>
+<script type="text/javascript">
+	!function(){
+		laydate.skin('yalan');
+		laydate({elem: '#demo'});//绑定元素
+	}();
+			
+	var start = {
+			elem: '#start',
+			format: 'YYYY-MM-DD',
+			min: laydate.now(),
+			max: '2099-09-01',
+			istime: true,
+			istoday: false,
+			choose: function(datas){
+					end.min = datas;
+					end.start = datas
+			}
+	};
+			
+	var end = {
+			elem: '#end',
+			format: 'YYYY-MM-DD',
+			min: laydate.now(),
+			max: '2099-09-01',
+			istime: true,
+			istoday: false,
+			choose: function(datas){
+				start.max = datas;
+			}
+	};
+	
+	laydate(start);
+	laydate(end);
+			
+	laydate({
+			elem: '#test1',
+			format: 'YYYY年MM月DD日',
+			festival: true,
+			choose: function(datas){
+				alert('得到：'+datas);
+			}
+	});
+			
+	laydate({
+			elem: '#hello3',
+			min: laydate.now(-1),
+			max: laydate.now(+1)
+	});
+</script>
+
+</body>
+</html>
