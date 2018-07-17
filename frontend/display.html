@@ -4,11 +4,30 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>表格数据显示代码</title>
 <link rel="stylesheet" type="text/css" href="display.css">
+ <script type="text/javascript" src="js/display.js"></script>
 </head>
 
 <body>
 	
-<div class=displaytable>
+    
+    
+    
+    <div id="query">
+    	<div class="section-hd">车次类型：</div>
+			<div class="section-bd" id="cc_train_type_btn_all">
+            	<button id="btn" title="1" onclick="checkboxed('cc_type')">全选</button>
+                
+                <ul id="_ul_station_train_code">
+                <li><input name="cc_type" value="G" type="checkbox" class="check" id="checkbox_paAk7ddplI"><label for="checkbox_paAk7ddplI" style="cursor: pointer;">GC-高铁/城际</label></li>
+                <li><input name="cc_type" value="D" type="checkbox" class="check" id="checkbox_WBled91fPs"><label for="checkbox_WBled91fPs" style="cursor: pointer;">D-动车</label></li>
+                <li><input name="cc_type" value="Z" type="checkbox" class="check" id="checkbox_GJlDeMJS6d"><label for="checkbox_GJlDeMJS6d" style="cursor: pointer;">Z-直达</label></li>
+                <li><input name="cc_type" value="T" type="checkbox" class="check" id="checkbox_OFbZM79Tnm"><label for="checkbox_OFbZM79Tnm" style="cursor: pointer;">T-特快</label></li>
+                <li><input name="cc_type" value="K" type="checkbox" class="check" id="checkbox_Fp2lbtKzBv"><label for="checkbox_Fp2lbtKzBv" style="cursor: pointer;">K-快速</label></li>
+                </ul>      
+    </div>
+    </div>
+   
+<div class="displaytable">
     <p>查询结果:</p>
     <table border="1" cellpadding="3" cellspacing="20">
       <thead>
@@ -20,7 +39,7 @@
           <th>到达时间</th>
           <th>卧铺</th>
           <th>硬座</th>
-          <th>无座</th>
+          
           <th>备注</th>
         </tr>
       </thead>
@@ -32,7 +51,7 @@
           <td align="center" width="46" style="cursor:pointer;" onclick="showticketprice(this)">无</td>
           <td>1</td>
           <td>1</td>
-          <td>1</td>
+         
           <td>1</td>
           <td>1</td>
           <td>1</td>
