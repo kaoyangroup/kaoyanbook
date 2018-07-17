@@ -84,14 +84,18 @@ CREATE TABLE `Manage` (
 
 CREATE TABLE `Order` (
   `orderId` int(11) NOT NULL,
-  `userId` varchar(45) NOT NULL,
+  `passengerId` varchar(45) NOT NULL,
   `ticketId` varchar(45) not NULL,
   `orderTime` datetime(6) DEFAULT NULL,
   `orderType` int(11) DEFAULT NULL,
   PRIMARY KEY (`orderId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-
+create table `Myorder`(
+  `userId` varchar(45) not null,
+  `orderId` varchar(45) not null,
+  primary key (`userId`, `orderId`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `Booking` (
   `ticketId` varchar(45) NOT NULL,
