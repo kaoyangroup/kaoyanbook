@@ -94,7 +94,7 @@ CREATE TABLE `Order` (
 create table `Myorder`(
   `userId` varchar(45) not null,
   `orderId` varchar(45) not null,
-  primary key (`userId`, `orderId`)
+  primary key (`orderId`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `Booking` (
