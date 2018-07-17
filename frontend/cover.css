@@ -1,0 +1,46 @@
+@charset "utf-8";
+#toptitle {
+	height: 30px;
+	margin: 0px;
+	padding: 0px;
+	background-image: url(image/%E5%B0%81%E9%9D%A2%E4%B8%8A%E6%A0%8F.png);
+}
+#toptitle #login {
+	float: right;
+	height: 30px;
+	width: 145px;
+	background-color: #656668;
+	font-family: "微软雅黑";
+	color: #FFF;
+	text-align: center;
+	line-height: 30px;
+}
+#toptitle #login:hover {
+	background-color: #757679;
+}
+#toptitle #login:active {
+	background-image: url(image/%E5%B0%81%E9%9D%A2%E4%B8%8A%E6%A0%8F%E6%8C%89%E9%92%AE%E6%8C%89%E4%B8%8B.png);
+}
+#kePublic {
+	height: 1000px;
+	margin-top: 0px;
+}
+
+#toptitle #login #image {
+	background-image: url(image/%E5%B0%81%E9%9D%A2%E4%B8%8A%E6%A0%8F%E7%AE%AD%E5%A4%B4.png);
+	background-repeat: no-repeat;
+	height: 30px;
+	width: 30px;
+	float: left;
+	margin-left: 5px;
+}
+#toptitle #login #word {
+	height: 30px;
+	width: 110px;
+	float: right;
+	text-align: center;
+	text-decoration: none;
+	color: #FFF;
+	font-family: "微软雅黑";
+
+}

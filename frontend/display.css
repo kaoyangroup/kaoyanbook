@@ -1,0 +1,20 @@
+.displaytable table tbody tr td a {
+	text-decoration: none;
+}
+.displaytable {
+	margin-top: 80px;
+	margin-left: 350px;
+}
+#query {
+	padding-top: 50px;
+	padding-left: 350px;
+	
+}
+#query #_ul_station_train_code {
+	list-style-type: none;
+}
+#query #_ul_station_train_code li {
+		float:left;
+		margin-left:50px;
+}
+
