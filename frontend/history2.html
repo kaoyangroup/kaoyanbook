@@ -4,7 +4,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>无标题文档</title>
 <link href="history.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/display.js"></script>
 <style type="text/css">
+
 body {
 	background-color: #CCC;
 }
@@ -16,13 +18,18 @@ body {
 <p>已完成订单：</p>
       <tbody>
         <tr> 
-            <td>  <table>
+            <td width="525">  <table>
             	<p>订单信息：</p>
                  <thead>
                     <tr>
+                 
+            <th>
+            <button id="btn" title="1" onclick="checkboxed('selectuser')" style="opacity: 0.9;">全选</button>
+            </th>
                      <th>序号</th>
                       <th>车次信息</th>
                       <th>席位信息</th>
+                      <th>旅客信息</th>
                       <th>票款金额</th>
                       <th>车票状态</th>
                     </tr>
@@ -30,15 +37,23 @@ body {
               </thead>
                   <tbody>
                    <tr>
+                   <td><input type="checkbox" name="selectuser" style="opacity: 0.9;"></td>
                       <td></td>
                       <td></td>
                       <td></td>
                       <td></td>
                       <td></td>
+                     <td></td>
+                     
+                    </tr>
+                     <tr>
+                   <td><input type="checkbox" name="selectuser" style="opacity: 0.9;"></td>
                       <td></td>
                       <td></td>
                       <td></td>
                       <td></td>
+                      <td></td>
+                    <td></td>
                     </tr>
                   </tbody>
             </table>
