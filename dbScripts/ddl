@@ -476,7 +476,7 @@ INSERT INTO `Mileprice` (`start`, `end`, `lineType`, `seatType`, `price`) VALUES
 
 
 --------------------------Lable Train------------------------------------
-INSERT INTO `train` (`trainId`, `trainType`, `carriages`) VALUES
+INSERT INTO `Train` (`trainId`, `trainType`, `carriages`) VALUES
 ('G001', 'G', 3),
 ('G002', 'G', 3),
 ('K001', 'K', 3),
@@ -489,7 +489,7 @@ INSERT INTO `train` (`trainId`, `trainType`, `carriages`) VALUES
 --------------------------Lable Carriage----------------------------------------------
 ---------------------carriageID = md5(trainId + carriageNo)----------------------------
 
-INSERT INTO `carriage` (`carriageId`, `trainId`, `carriageNo`, `carriageType`, `seatCnt`) VALUES
+INSERT INTO `Carriage` (`carriageId`, `trainId`, `carriageNo`, `carriageType`, `seatCnt`) VALUES
 ('173f4292ad6b715d4e5ca2f2cf33cbbe', 'T001', 2, '坐票', 40),
 ('1dfb408101b742cf80f68e7e92eba1e1', 'K002', 2, '坐票', 40),
 ('2490fc87368b8a6eee4441adea426ab6', 'G002', 1, '卧票', 30),
@@ -515,7 +515,7 @@ INSERT INTO `carriage` (`carriageId`, `trainId`, `carriageNo`, `carriageType`, `
 
 -----------------------------------------------Lable Seat--------------------------------------
 ------------------------------seatID = md5(CarriageId + seatNo)--------------------------------
-INSERT INTO `seat` (`seatId`, `seatNo`, `carriageId`) VALUES
+INSERT INTO `Seat` (`seatId`, `seatNo`, `carriageId`) VALUES
 ('0024afe2e03772dd61724558e705985e', 'B', '3e1eb03a6322ef7c3081cba6c8da7e76'),
 ('003c4833755b5b7867283eaeb48ee6d2', 'A', '3e1eb03a6322ef7c3081cba6c8da7e76'),
 ('0066ec2465ed2bc122172ad0726eddcf', 'B', '5c61c6807529c4cf2ac50a9dba03eaf6'),
@@ -1164,7 +1164,11 @@ INSERT INTO `seat` (`seatId`, `seatNo`, `carriageId`) VALUES
 ('d49b46ec4439bd862c6ae6e7a3431fb1', 'B', '1dfb408101b742cf80f68e7e92eba1e1'),
 ('d5180d476c0de586fca8478283997e97', 'D', 'be70d53801332f3b4f6b6375877eeee2'),
 ('d54404fd8290159cd83c9bab47af5305', 'B', 'be70d53801332f3b4f6b6375877eeee2');
-INSERT INTO `seat` (`seatId`, `seatNo`, `carriageId`) VALUES
+
+
+
+
+INSERT INTO `Seat` (`seatId`, `seatNo`, `carriageId`) VALUES
 ('d557c295b98f409ebd29ca4d70869194', 'A', '1dfb408101b742cf80f68e7e92eba1e1'),
 ('d559bc8d9e9ef1fb44732408d6dbe043', 'B', '2490fc87368b8a6eee4441adea426ab6'),
 ('d56c42e4d8c84d0038499ba9dbcdd350', 'B', '2490fc87368b8a6eee4441adea426ab6'),
@@ -1290,7 +1294,7 @@ INSERT INTO `seat` (`seatId`, `seatNo`, `carriageId`) VALUES
 
 
 -----------------------Lable Manage-------------------
-INSERT INTO `manage` (`lineId`, `date`) VALUES
+INSERT INTO `Manage` (`lineId`, `date`) VALUES
 ('G001', '2018-07-19'),
 ('G001', '2018-07-20'),
 ('G001', '2018-07-21'),
@@ -1416,3 +1420,7 @@ INSERT INTO `manage` (`lineId`, `date`) VALUES
 ('T002', '2018-08-13'),
 ('T002', '2018-08-15'),
 ('T002', '2018-08-17');
+
+
+
+
