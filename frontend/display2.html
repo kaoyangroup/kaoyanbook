@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>表格数据显示代码</title>
+<link rel="stylesheet" type="text/css" href="display.css">
+
+<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/table.css"/>
+	
+<script src="js/table.min.js"></script>
+<script src="js/bc.grid-1.0.0.min.js"></script>
+
+<script type="text/javascript" src="js/display.js"></script>
+</head>
+
+<body>
+    <div id="query">
+    	<div class="section-hd">车次类型：</div>
+			<div class="section-bd" id="cc_train_type_btn_all">
+            	<button id="btn" title="1" onclick="checkboxed('cc_type')">全选</button>
+                
+                <ul id="_ul_station_train_code">
+                <li><input name="cc_type" value="G" type="checkbox" class="check" id="checkbox_paAk7ddplI"><label for="checkbox_paAk7ddplI" style="cursor: pointer;">GC-高铁/城际</label></li>
+                <li><input name="cc_type" value="D" type="checkbox" class="check" id="checkbox_WBled91fPs"><label for="checkbox_WBled91fPs" style="cursor: pointer;">D-动车</label></li>
+                <li><input name="cc_type" value="Z" type="checkbox" class="check" id="checkbox_GJlDeMJS6d"><label for="checkbox_GJlDeMJS6d" style="cursor: pointer;">Z-直达</label></li>
+                <li><input name="cc_type" value="T" type="checkbox" class="check" id="checkbox_OFbZM79Tnm"><label for="checkbox_OFbZM79Tnm" style="cursor: pointer;">T-特快</label></li>
+                <li><input name="cc_type" value="K" type="checkbox" class="check" id="checkbox_Fp2lbtKzBv"><label for="checkbox_Fp2lbtKzBv" style="cursor: pointer;">K-快速</label></li>
+                </ul>      
+            </div>
+        </div>
+<div class="displaytable">
+<p>查询结果如下：</p>
+
+<div id="table">  
+</div></div>
+
+<script>
+    var data = [{"no":"K98","from":"北京","to":"天津","stime":"10:56","etime":"13:45","bed":1,"seat":2},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{}];
+    $(function () {
+        var grid=BCGrid.create("#table",{
+            columns: [
+                {name: 'no', display: '车次', align: 'center'},
+                {name: 'from', display: '出发站', align: 'center'},
+                {name: 'to', display: '到达站', align: 'center'},
+                {name: 'stime', display: '出发时间', align: 'center', enableSort: true},
+                {name: 'etime', display: '到达时间', align: 'center', enableSort: true},
+                {name: 'bed', display: '卧铺', align: 'center'},
+				{name: 'seat', display: '硬座', align: 'center'},
+				{name: 'buy', display: '购票', align: 'center'}
+            ],
+            dataSource:'local',
+            localData:data
+        });
+    });
+</script>
+
+</body>
+</html>
