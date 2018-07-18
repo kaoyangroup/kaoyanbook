@@ -10,4 +10,5 @@ $con = mysqli_connect($dbServer,$userName,$dbPwd,$dbName);
 if(!$con){
     die('Could not connect: '.mysqli_connect_error());
 }
+
 ?>
