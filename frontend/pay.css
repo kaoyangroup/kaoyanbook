@@ -1,7 +1,10 @@
+	
 #title {
 	margin-left:25px;
 	margin-top:30px;
 }
+
+
 #info {
 	margin-left: 80px;
 	margin-top: 50px;
@@ -96,4 +99,16 @@
 	float: right;
 	width:300px;
 }
+
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+content {
+  background: #bbbbbb;
+  flex: 1; /* 1 代表盡可能最大，會自動填滿除了 header footer 以外的空間 */
+}
+
 
