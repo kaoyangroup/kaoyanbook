@@ -1,14 +1,24 @@
 <?php
 function update($orderId,$uid,$f)
 {
-	require_once './includes/dbh.inc.php';
+	$dbServer = "localhost";
+$userName = "root";
+$dbPwd = "123456";
+$dbName = "train";
+
+$con = mysqli_connect($dbServer,$userName,$dbPwd,$dbName);
+mysqli_set_charset($con,'utf8');
+
+if(!$con){
+    die('Could not connect: '.mysqli_connect_error());
+}
 	//Order
 	$sql_order = "select * from Order1 where orderId='$orderId'";
 	$res_order = mysqli_query($con,$sql_order);
 	$row_order = mysqli_fetch_array($res_order);
 	$ticketId = $row_order["ticketId"];
-	$from = $row_order["from"];
-	$to = $row_order["to"];
+	$from = $row_order["start"];
+	$to = $row_order["end"];
 
 	//Myorder
 	$uid = $_COOKIE["cur_uid"];
@@ -61,7 +71,7 @@ function update($orderId,$uid,$f)
 	$price = $row_price["price"];
 
 	$codeLength = strlen($marginCode);
-	for($i = $order_from;$i <= $order_to;$i++)
+	for($i = $order_from-1;$i <= $order_to-1;$i++)
 	{
 		if($marginCode[$i] == '1')
 			$marginCode[$i] = '0';
@@ -73,13 +83,13 @@ function update($orderId,$uid,$f)
 		if($marginCode[$j] == '0')
 			$marginNum++;
 	}
-
+	$marginNum--;
 	//update booking
 	$sql_update_booking = "update Booking set marginCode='$marginCode',marginTicket='$marginNum' where ticketId='$ticketId'";
 	mysqli_query($con,$sql_update_booking);
 
 	//Margins
-	$sql_update_margins = "update Margins set marginTicket=marginTicket+1 where lineId='$lineId' and date='$goDate' and from='$from' and to='$to'";
+	$sql_update_margins = "update Margins set marginTicket=marginTicket+1 where lineId='$lineId' and date='$goDate' and start='$from' and end='$to'";
 	mysqli_query($con,$sql_update_margins);
 
 	//update myorder

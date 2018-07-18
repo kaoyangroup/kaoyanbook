@@ -9,7 +9,7 @@
 <body id='changePas'>
 <h3>账号安全 - 密码修改</h3>
 <div id="center">
-<form action="changePasSQL.php" method="post">
+<form action="../frontend/changePasSQL.php" method="post">
 <p>原密码：&nbsp;&nbsp;&nbsp;
 <input type="password" name="textfieldA" /></p>
 <p>新密码：&nbsp;&nbsp;&nbsp;

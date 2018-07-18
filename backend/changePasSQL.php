@@ -1,13 +1,10 @@
 <?php
+require_once '../backend/includes/dbh.inc.php';
 $oldPas = $_POST["textfieldA"];
 $newPas = $_POST["textfieldB"];
 $newPas2 = $_POST["textfieldC"];
 $uid = $_COOKIE["cur_uid"];
-$con = mysqli_connect("localhost","root","123456","train");
-if(!$con)
-{
-	die('Count not connect');
-}
+
 $sql = "select * from user where uid='$uid'";
 $result = mysqli_query($con,$sql);
 $row = mysqli_fetch_array($result);

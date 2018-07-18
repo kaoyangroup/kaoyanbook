@@ -1,9 +1,5 @@
 <?php 
-$con = mysqli_connect("localhost","root","123456","train");
-if(!$con)
-{
-	die('Count not connect');
-}
+require_once '../backend/includes/dbh.inc.php';
 $mon = $_POST["textfield"];
 $uid = $_COOKIE["cur_uid"];
 $sql = "update user set account=account+'$mon' where uid='$uid'";

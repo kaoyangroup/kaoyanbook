@@ -76,6 +76,7 @@
 					<input type="submit" value="登 录"><br>
 					
 					<?php 
+					require_once '../backend/includes/dbh.inc.php';
 						if(isset($_GET["loginErr"]))
 						{
 							$info = $_GET["loginErr"];

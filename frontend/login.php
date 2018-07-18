@@ -1,13 +1,10 @@
 <html>
 <body>
 <?php 
+require_once '../backend/includes/dbh.inc.php';
 $uid = $_POST["Userame"];
 $pwd = $_POST["Password"];
-$con = mysqli_connect("localhost","root","123456","train");
-if(!$con)
-{
-	die('Count not connect');
-}
+
 $sql = "select * from user where pwd='$pwd' and (uid='$uid' or email='$uid' or mobile='$uid')";
 $result = mysqli_query($con,$sql);
 $num=mysqli_num_rows($result);
