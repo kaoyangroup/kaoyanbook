@@ -68,7 +68,7 @@
 						<div id="tab-1">
 							<div class="submit-form">
 								<h4>余票查询</h4>
-								<form id="form-submit" action="../backend/ticketQuerySql.php" method="post">
+								<form id="form-submit" action="ticketTable.html" method="post">
 									<div class="row">
 										<!-- from-->
 										<div class="col-md-12">
