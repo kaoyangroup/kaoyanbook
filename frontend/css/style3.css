@@ -1,0 +1,44 @@
+﻿*{padding: 0;margin:0; }
+
+li{list-style: none;}
+
+#center{
+	width: 1230px;
+	height: 300px;
+	margin-left: 160px;
+}
+
+#center ul li{
+    float: left;
+    margin-top: 0px;
+	margin-right: 5px;
+	margin-bottom: 0px;
+	margin-left: 5px;
+    width: 400px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+#center ul li .cove{
+	width: 400px;
+	height: 300px;
+	position: absolute;
+	top: 0;
+	left: 400px;
+	padding: 140px 0 0 0;
+	background-image: url(../image/%E9%A6%96%E9%A1%B5%E5%9B%BE%E7%89%87%E8%A6%86%E7%9B%96.png);
+}
+
+#cernte ul li img{
+    display: block;
+}
+
+#center ul li .cove p{
+
+	font-size: 20px;
+	font-family: 微软雅黑;
+	color:#fff;
+	text-align: center;
+
+}

@@ -34,10 +34,13 @@ body {
                 </thead>
                   <tbody>
                   <?php
-
+				  ini_set('date.timezone','Asia/Shanghai');
+				  require_once '../backend/order_back.php';
+				  
                   $uid = $_COOKIE["cur_uid"];
+                  echo $uid."<br>";
                   $i = 0;
-                  $con = mysqli_connect("localhost","root","123456","train");
+                  $con = mysqli_connect("localhost","root","zzzzzzwj","test");
                   if(!$con)
                   {
                     die('Count not connect');
@@ -45,28 +48,49 @@ body {
 
                   $sql = "select * from Myorder where userId='$uid'";
                   $result = mysqli_query($con,$sql);
+				  if(!$result){
+					  printf("Error: %s\n", mysqli_error($con));
+					  exit();
+				  }
                   $cur_time = date("y-m-d h:i:s");
+                  
+                //   $toShowList = array();
                   while($row=mysqli_fetch_array($result))
                   {
-
+					  if(!$row){
+					  printf("Error: %s\n", mysqli_error($con));
+					  exit();
+                  }
                      $orderId = $row["orderId"];
+                     echo $orderId."<br>";
                      //Order
-                     $sql_order = "select * from Order where orderId='$orderId' and orderType=0";
+                     $sql_order = "select * from Order1 where orderId='$orderId' and orderType=0";
                      $res_order = mysqli_query($con,$sql_order);
-                     if(mysqli_num_rows($res_order) == 0)
+                     $num_order = mysqli_num_rows($res_order);
+                     echo $num_order."<br>";
+                     if($num_order == 0)
                      {
                       continue;
                      }
                      $row_order = mysqli_fetch_array($res_order);
                      $orderTime = $row_order["orderTime"];
                      $passengerId = $row_order["passengerId"];
-                     $from = $row_order["from"];
-                     $to = $row_order["to"];
-                     if(strtotime($cur_time)-strtotime($orderTime) >= 60*30)
+                     $from = $row_order["start"];
+                     $to = $row_order["end"];
+                     echo $to."<br>";
+                     $flag = 0;
+                     $ttime = strtotime($cur_time)-strtotime($orderTime);
+                     echo $ttime."<br>";
+                     /*
+                     
+                     if( >= 60*120)
                      {
                         //退票
+                        echo $flag."<br>";
+                        update($con,$orderId,$uid,0);
+                        $flag = 1;
                         continue;
-                     }
+                     }*/
                      $i += 1;
                      $ticketId = $row_order["ticketId"];
                      //Booking
@@ -89,7 +113,7 @@ body {
                      $res_carriage = mysqli_query($con,$sql_carriage);
                      $row_carriage = mysqli_fetch_array($res_carriage);
                      $trainId = $row_carriage["trainId"];
-                     $carriageType = $row_carriage["carriageType"];
+                     $seatType = $row_carriage["carriageType"];
                      $carriageNo = $row_carriage["carriageNo"];
 
                      //Train
@@ -103,40 +127,55 @@ body {
                      $res_user = mysqli_query($con,$sql_user);
                      $row_user = mysqli_fetch_array($res_user);
                      $name = $row_user["name"];
+                     echo $from." ".$to." ".$trainType." ".$seatType."<br>";
 
                      //Mileprice
                      $sql_price = "select * from Mileprice where start='$from' and end='$to' and lineType='$trainType' and seatType='$seatType'";
                      $res_price = mysqli_query($con,$sql_price);
                      $row_price = mysqli_fetch_array($res_price);
                      $price = $row_price["price"];
+                     echo $price."<br>";
 
-
-                     echo "<tr>";
-                     echo   "<td>".$i."</td>";
-                     echo   "<td>".$from."</td>";
-                     echo   "<td>".$to."</td>";
-                     echo   "<td>".$trainId."</td>";
-                     echo   "<td>".$carriageNo."号车厢".$seatNo."号座位</td>";
-                     echo   "<td>".$name."</td>";
-                     echo   "<td>".$goDate."</td>";
-                     echo   "<td>1</td>";
-                     echo   "<td>".$price."</td>";
-                     echo   "<input type='button' id='button2' value='继续支付'  onclick='Onsubmits()' ><script type='text/javascript'>";
-                     echo   "function Onsubmits(){  window.location.href='pay.html?orderId='+$orderId;}</script>";
-                     echo   "<input type='button' id='button2' value='取消订单'  onclick='Onsubmit()' ><script type='text/javascript'>";
-                     echo   "function Onsubmit(){  window.location.href='order_back.php?orderId='+$orderId;}</script>";
-                     echo "<tr>";
+                     
                   }
-                  ?>
-                  </tbody>
-            </table>
-            </td>
-        </tr>
+                  
+                 echo "</tbody>";
+           echo "</table>";
+          echo  "</td>";
+      echo  "</tr>";
         
         
         
-        <tr>
-            <td><table>
+       echo  "<tr>";
+           echo "<td><table>";
+                
+                echo "<tr>";
+                echo   "<td>".$i."</td>";
+                echo   "<td>".$from."</td>";
+                echo   "<td>".$to."</td>";
+                echo   "<td>".$trainId."</td>";
+                echo   "<td>".$carriageNo."号车厢".$seatNo."号座位</td>";
+                echo   "<td>".$name."</td>";
+                echo   "<td>".$goDate."</td>";
+                echo   "<td>1</td>";
+                echo   "<td>".$price."</td>";
+                if($flag == 0){
+                   echo   "<input type='button' id='button2' value='继续支付'  onclick='Onsubmits()' ><script type='text/javascript'>";
+                   echo   "function Onsubmits(){  window.location.href='pay.html?orderId='+$orderId;}</script>";
+
+                   echo   "<input type='button' id='button2' value='取消订单'  onclick='Onsubmit()' >";  
+                        echo   "<script type='text/javascript'>
+                                function Onsubmit(){
+                                    alert('取消订单成功！');
+                                    var id = <?php echo ".'$orderId'."; ?>
+                                    var uid = <?php echo ".'$uid'."; ?>
+                                    <?php update(id,uid,0);?>
+                                
+                                }
+                                </script>";
+               }
+                echo "</tr>";
+            ?>
             </table></td>
         </tr>
       

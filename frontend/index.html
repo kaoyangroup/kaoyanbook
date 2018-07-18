@@ -1,19 +1,40 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" class="no-js">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>中国铁路客户服务中心</title>
-<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+
+<!-- 图片触碰效果 -->
+<script type="text/javascript" src="js/img.js"></script>
+<link rel="stylesheet" href="css/style3.css">
+
+<!-- 动态背景 -->
+<link rel="stylesheet" href="css/style2.css" />
+<script type='text/javascript' src='js/jquery-1.11.1.min.js'></script>
+<script type='text/javascript' src='js/jquery.particleground.min.js'></script>
+<script type='text/javascript' src='js/demo.js'></script>
+
 </head>
 
 <body>
-<div id="total">
+<div id="particles">
+<div class="intro">
 
-<div id="toptitle">
-<h3>中国铁路客户服务中心 - 假</h3>
+<div id="top"><div id="toptitle">
 
 <div id="clock">
     <p class="date">{{ date }}  {{ time }}</p>
+</div>
+<div id="out"><a href="login2.php">退出登录</a></div>
+
+</div>
+
+<div id="title">
+	<p><span>Welcome to</span><br />
+    中国铁路客户服务中心</p>
+</div>
 </div>
 
 <script type="text/javascript" src="js/vue.min.js"></script>
@@ -28,39 +49,145 @@ var clock = new Vue({
 var week = ['星期天', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
 var timerID = setInterval(updateTime, 1000);
 updateTime();
+
 function updateTime() {
     var cd = new Date();
-    clock.time = zeroPadding(cd.getHours(), 2) + ':' + zeroPadding(cd.getMinutes(), 2) + ':' + zeroPadding(cd.getSeconds(), 2);
+    
+	clock.time = zeroPadding(cd.getHours(), 2) + ':' + zeroPadding(cd.getMinutes(), 2) + ':' + zeroPadding(cd.getSeconds(), 2);
     clock.date = zeroPadding(cd.getFullYear(), 4) + '-' + zeroPadding(cd.getMonth()+1, 2) + '-' + zeroPadding(cd.getDate(), 2) + ' ' + week[cd.getDay()];
-};
+	};
+
 function zeroPadding(num, digit) {
     var zero = '';
     for(var i = 0; i < digit; i++) {
-        zero += '0';
+		zero += '0';
     }
     return (zero + num).slice(-digit);
-}</script>
-
-
-<div id="topbar">
-<ul>
-<li><a href="../backend/ticketBookingSql.php">购票</a></li>
-<li><a href="UserAll.html" target="iframe">查看用户信息</a></li>
-<li><a href="order.html" target="iframe">查看历史订单</a></li>
-<li><a href="Money.php" target="iframe">充值</a></li>
-<li><a href="login2.php">退出登录</a></li>
-</ul>
-</div>
-</div>
+}
+</script>
 
 <div id="center">
-<iframe class="iframe" name="iframe"></iframe>
+<ul>
+	<li>
+<img src="image/%E9%A6%96%E9%A1%B5%E8%B4%AD%E7%A5%A8.jpg" alt="" id="buy">
+		<a href="Buy.html" target="_blank">
+            <div class="cove">
+			  <p>购票</p>
+            </div>
+         </a>
+	</li>
+	<li>
+<img src="image/%E9%A6%96%E9%A1%B5%E4%BF%A1%E6%81%AF.jpg" alt="" id="info">
+		<a href="UserAll.html" target="_blank">
+        	<div class="cove">
+        		<p>查看用户信息</p>
+   		  </div>
+        </a>
+	</li>
+    <li>
+<img src="image/%E9%A6%96%E9%A1%B5%E8%AE%A2%E5%8D%95.jpg" alt="" id="hist">
+		<a href="order.html" target="_blank">
+		  <div class="cove">
+				<p>查看历史订单</p>
+			</div>
+		</a>
+	</li>
+</ul>
 </div>
+
+<script type="text/javascript" >
+
+		(function () {
+			var $li =$('#center ul li');
+			
+			$li.hover(function (ev) {
+				move.call(this , ev , true);
+		},
+		
+		function (ev) {
+				move.call(this , ev , false);
+		});
+		
+		function move( ev , bool) {
+				var top = $(this).offset().top;
+				var bottom = top + $(this).height();
+				var left = $(this).offset().left;
+				var right = left + $(this).width();
+				
+				var x = ev.pageX,
+					y = ev.pageY;
+
+				var sT = Math.abs(y - top),
+					sB = Math.abs(y - bottom),
+		
+				sL = Math.abs(x - left),
+				sR = Math.abs(x - right);
+
+				var a = Math.min( sT , sB , sL , sR );
+
+				switch( a ){
+					
+					case sT:
+						if (bool) {
+								$(this).find('.cove').css({
+									left:0,
+									top:'-300px'
+								}).animate({
+								top:0},200);
+						} else {
+								$(this).find('.cove').stop(1,1).animate({
+									top:'-300px'},200);
+						}
+					break;
+
+					case sB:
+						if ( bool ) {
+								$(this).find('.cove').css({
+									left:0,
+									top:'300px'
+								}).animate({
+									top:0},200);		
+						} else {
+								$(this).find('.cove').stop(1,1).animate({
+									top:'300px'},200);	
+						}
+					break;
+					
+					case sL:
+						if ( bool ) {
+								$(this).find('.cove').css({
+									left:'-400px',
+									top:0
+								}).animate({
+									left:0},200);				
+						} else {
+								$(this).find('.cove').stop(1,1).animate({
+									left:'-400px'},200);	
+						}
+					break;
+					
+					case sR:
+						if ( bool ) {
+								$(this).find('.cove').css({
+									left:'400px',
+									top:0
+								}).animate({
+									left:0},200);							
+						} else {
+								$(this).find('.cove').stop(1,1).animate({
+									left:'400px'},200);	
+						}
+						break;
+				}
+			};
+		})();
+	</script>
 
 <div id="bottom">
 <p>版权所有 © 2018 北京邮电大学 计算机学院</p>
 </div>
 
 </div>
-</body>
-</html>
+</div>
+</body> 
+</html> 

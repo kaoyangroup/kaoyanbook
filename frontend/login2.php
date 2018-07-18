@@ -31,6 +31,7 @@
 		
 		function validate_cardNo(){
 			var re=/^[0-9]{17}([0-9]|X)$/;  
+
 			if(re.test(reg.cardNo.value)){return true}
 			else{alert('身份证号格式不正确！');return false}
 		}
@@ -69,8 +70,7 @@
 					    <input type="checkbox" id="brand1" value="">
 					    <label for="brand1"><span></span>记住我</label>
 				    </li>
-			    </ul>
-            
+			    </ul>           
 			    <div class="send-button w3layouts agileits">				
 				<input type="submit" value="登 录"><br>					
 				<?php 
@@ -81,7 +81,7 @@
 						//echo '<span style="color:white">'.$_GET["loginErr"].'</span>';
 					}
 				 ?>
-                    
+           
 			</form>
 		</div>
             
