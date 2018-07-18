@@ -72,12 +72,13 @@
 		}
 
 		ul {
-			padding: 0;
-			list-style: none;
-			width: 80%;
-			margin-left: 10%;
-			position: absolute;
-			top: 10px;
+	list-style: none;
+	width: 230px;
+	position: absolute;
+	top: 120px;
+	left: -30px;
+	height: 200px;
+	padding-left: 100px;
 		}
 
 		ul li {
@@ -97,4 +98,20 @@
 		}
 
 
+	.menu-inner li a{
+	font-family: "微软雅黑";
+	color: #FFF;
+	line-height: 35px;
+	text-decoration: none;
+	font-size: 25px;
+	}
 	
+	#listtitle {
+	height: 35px;
+	line-height: 35px;
+	padding-left: 25px;
+	font-family: "微软雅黑";
+	color: #26394E;
+	font-size: 30px;
+	padding-top: 5px;
+}

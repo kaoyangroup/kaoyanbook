@@ -48,11 +48,11 @@
 
 
 #safe #s #sA {
-	height: 350px;
-	width: 200px;
+	height: 400px;
+	width: 250px;
 	float: left;
-	margin-right: 10px;
-	margin-left: 10px;
+	margin-right: 25px;
+	margin-left: 0px;
 	text-align: center;
 	background-color: #C9F;
 }
@@ -68,11 +68,11 @@
 
 
 #safe #s #sB {
-	height: 350px;
-	width: 200px;
+	height: 400px;
+	width: 250px;
 	float: left;
-	margin-right: 10px;
-	margin-left: 10px;
+	margin-right: 25px;
+	margin-left: 25px;
 	text-align: center;
 	background-color: #C9F;
 }
@@ -83,11 +83,11 @@
 }
 
 #safe #s #sC {
-	height: 350px;
-	width: 200px;
+	height: 400px;
+	width: 250px;
 	float: left;
 	margin-right: 10px;
-	margin-left: 10px;
+	margin-left: 25px;
 	text-align: center;
 	background-color: #C9F;
 }
@@ -99,9 +99,22 @@
 
 #safe {
 	font-family: "微软雅黑";
+	background-color: #26394E;
+}
+#safe h3 {
+	color: #CCC;
+	line-height: 35px;
+	font-size: 35px;
+}
+#t {
+	padding-left: 40px;
 }
 
+
+
 #safe #s {
-	padding-left: 30px;
-	padding-top: 10px;
+	padding-left: 200px;
+	padding-top: 0px;
+	height: 350px;
+	margin-top: 200px;
 }

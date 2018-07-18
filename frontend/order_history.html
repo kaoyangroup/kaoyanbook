@@ -2,17 +2,38 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>无标题文档</title>
-<link href="history.css" rel="stylesheet" type="text/css" />
+<title>历史订单目录</title>
+
+<style type="text/css">
+@import url("user.css");
+</style>
+
+<link rel="stylesheet" href="list.css">
 </head>
 
-<body id="indexid">
-<ul id="index">
-<li id="title">我的火车票:</li>
-<p></p>
-<li>&nbsp;&nbsp;<a  href="order_false.php" target="mainFrame">未完成订单</a></li>
-<p></p>
-<li>&nbsp;&nbsp;<a href="order_true.php" target="mainFrame">已完成订单</li>
-</ul>
+<body id="list">
+<div id="menu">
+		<div class="hamburger">
+			<div class="line"></div>
+			<div class="line"></div>
+			<div class="line"></div>
+		</div>
+
+		<div class="menu-inner">
+       	  <div id="listtitle"><h4>查看历史订单</h4></div>
+          <div id="listcontent">
+            <ul>
+                <li><a href="order_false.php" target="mainFrame">未完成订单</a></li>
+                <li><a href="order_true.php" target="mainFrame">已完成订单</a></li>
+            </ul>
+            </div>
+		</div>
+        <svg version="1.1" id="blob"xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			<path id="blob-path" d="M60,500H0V0h60c0,0,20,172,20,250S60,900,60,500z"/>
+		</svg>
+</div>
+
+<script src='js/jquery.min.js'></script>
+<script src="js/list.js"></script>
 </body>
 </html>
