@@ -28,14 +28,14 @@ CREATE TABLE `Contacts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
-//[from,to]价格
+//[start,end]价格
 CREATE TABLE `Mileprice` (
-  `from` varchar(45) NOT NULL,
-  `to` varchar(45) NOT NULL,
+  `start` varchar(45) NOT NULL,
+  `end` varchar(45) NOT NULL,
   `lineType` varchar(15) NOT NULL,
   `seatType` varchar(15) NOT NULL,
   `price` int(11) NOT NULL,
-  PRIMARY KEY (`from`,`to`,`lineType`,`seatType`)
+  PRIMARY KEY (`start`,`end`,`lineType`,`seatType`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
@@ -82,7 +82,8 @@ CREATE TABLE `Manage` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
-CREATE TABLE `Order` (
+
+CREATE TABLE `Order1` (
   `orderId` int(11) NOT NULL,
   `passengerId` varchar(45) NOT NULL,
   `ticketId` varchar(45) not NULL,
@@ -114,11 +115,11 @@ CREATE TABLE `Booking` (
 CREATE TABLE `Margins` (
   `lineId` varchar(15) NOT NULL,
   `date` date NOT NULL,
-  `from` varchar(45) NOT NULL,
-  `to` varchar(45) NOT NULL,
+  `start` varchar(45) NOT NULL,
+  `end` varchar(45) NOT NULL,
   `seatType` varchar(15) NOT NULL,
   `marginTicket` int(11) NOT NULL,
-  PRIMARY KEY (`lineId`,`date`,`from`,`to`,`seatType`)
+  PRIMARY KEY (`lineId`,`date`,`start`,`end`,`seatType`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -----------------Lable   Line ---------------
@@ -156,7 +157,7 @@ INSERT INTO `Line` (`lineId`, `station`, `arrOrder`, `arrTime`, `arrDate`) VALUE
 
 
 -----------------------Lable  Mileprice---------------------------------------------
-INSERT INTO `Mileprice` (`from`, `to`, `lineType`, `seatType`, `price`) VALUES
+INSERT INTO `Mileprice` (`start`, `end`, `lineType`, `seatType`, `price`) VALUES
 ('北京', '上海', 'G', '卧票', 605),
 ('北京', '上海', 'G', '坐票', 555),
 ('北京', '上海', 'K', '卧票', 235),
@@ -517,8 +518,7 @@ INSERT INTO `Carriage` (`carriageId`, `trainId`, `carriageNo`, `carriageType`, `
 
 -----------------------------------------------Lable Seat--------------------------------------
 ------------------------------seatID = md5(CarriageId + seatNo)--------------------------------
-
-INSERT INTO `seat` (`seatId`, `seatNo`, `carriageId`) VALUES
+INSERT INTO `Seat` (`seatId`, `seatNo`, `carriageId`) VALUES
 ('0024afe2e03772dd61724558e705985e', '02B', '3e1eb03a6322ef7c3081cba6c8da7e76'),
 ('003c4833755b5b7867283eaeb48ee6d2', '10A', '3e1eb03a6322ef7c3081cba6c8da7e76'),
 ('0066ec2465ed2bc122172ad0726eddcf', '06B', '5c61c6807529c4cf2ac50a9dba03eaf6'),
@@ -1151,7 +1151,7 @@ INSERT INTO `seat` (`seatId`, `seatNo`, `carriageId`) VALUES
 ('ce890ffc685a53ce26c907c7ac7a0cfa', '07B', 'be70d53801332f3b4f6b6375877eeee2'),
 ('ceaab5c5eb19bf3991a738e7c0a8afde', '02A', '781971ef8125d869e3137bba3fe380b4'),
 ('cecd9eeb935fbe6d21eec5e6aca78072', '07D', '469027a2d576f2f05dfe8b64919c50fa');
-INSERT INTO `seat` (`seatId`, `seatNo`, `carriageId`) VALUES
+INSERT INTO `Seat` (`seatId`, `seatNo`, `carriageId`) VALUES
 ('cf072b8219e31b0e65db5459ec672617', '04B', '5c61c6807529c4cf2ac50a9dba03eaf6'),
 ('cf1ee3f27efedd71dfcd95e3b04ebdeb', '08D', '818b82ff0dcbed32c8577ebd8f7bb52e'),
 ('cfe4d2668ea267d0fc59f9a762a79562', '09D', '7fd59fb69cb1f8202e64cd7417e60e8d'),
@@ -1290,10 +1290,6 @@ INSERT INTO `seat` (`seatId`, `seatNo`, `carriageId`) VALUES
 ('fedc5f8b465e53c8f6be9123f80bda40', '04C', '4a2290545a07fd7ee230dd28b41114aa'),
 ('fee7adacf27aba165b651cc1c3781424', '08B', 'bbf2251c56afdbcd2b69d607948097bb'),
 ('ff3aef2eae46e75f9f77d3dd16da714e', '09A', '557766ba5b2e543f72aa60a84b288238');
-
-
-
-
 -----------------------Lable Manage-------------------
 INSERT INTO `Manage` (`lineId`, `date`) VALUES
 ('G001', '2018-07-19'),

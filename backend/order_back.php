@@ -71,7 +71,7 @@ if(!$con){
 	$price = $row_price["price"];
 
 	$codeLength = strlen($marginCode);
-	for($i = $order_from-1;$i <= $order_to-1;$i++)
+	for($i = $order_from-1;$i <= $order_to;$i++)
 	{
 		if($marginCode[$i] == '1')
 			$marginCode[$i] = '0';
@@ -83,7 +83,6 @@ if(!$con){
 		if($marginCode[$j] == '0')
 			$marginNum++;
 	}
-	$marginNum--;
 	//update booking
 	$sql_update_booking = "update Booking set marginCode='$marginCode',marginTicket='$marginNum' where ticketId='$ticketId'";
 	mysqli_query($con,$sql_update_booking);
