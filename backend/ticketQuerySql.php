@@ -1,4 +1,8 @@
 <?php
+header("content-type:text/html;charset=utf-8");         //设置编码
+?>
+
+<?php
 	include_once "includes/dbh.inc.php";
 ?>
 
