@@ -30,7 +30,8 @@
 		}
 		
 		function validate_cardNo(){
-			var re=/^[0-9]{17}([0-9]|x)$/;  
+			var re=/^[0-9]{17}([0-9]|X)$/;  
+
 			if(re.test(reg.cardNo.value)){return true}
 			else{alert('身份证号格式不正确！');return false}
 		}
@@ -61,36 +62,33 @@
 		<div class="login w3layouts agileits">
 			<h2>登 录</h2>
 			<form action="login.php" name="log" method="post">
-				<input type="text" Name="Userame" placeholder="用户名/邮箱/手机号" required>
-				<input type="password" Name="Password" placeholder="密码" required>
+				<input type="text" name="Username" placeholder="用户名/邮箱/手机号" required>
+				<input type="password" name="Password" placeholder="密码" required>
 			
-			<ul class="tick w3layouts agileits">
-				<li>
-					<input type="checkbox" id="brand1" value="">
-					<label for="brand1"><span></span>记住我</label>
-				</li>
-			</ul>
-            
-			<div class="send-button w3layouts agileits">
-				
-					<input type="submit" value="登 录"><br>
-					
-					<?php 
-						if(isset($_GET["loginErr"]))
-						{
-							$info = $_GET["loginErr"];
-							echo "<script>alert($info) </script>";
-							//echo '<span style="color:white">'.$_GET["loginErr"].'</span>';
-						}
-					 ?>
-                    
-				</form>
-			</div>
+			    <ul class="tick w3layouts agileits">
+				    <li>
+					    <input type="checkbox" id="brand1" value="">
+					    <label for="brand1"><span></span>记住我</label>
+				    </li>
+			    </ul>           
+			    <div class="send-button w3layouts agileits">				
+				<input type="submit" value="登 录"><br>					
+				<?php 
+					if(isset($_GET["loginErr"]))
+					{
+						$info = $_GET["loginErr"];
+						echo "<script>alert($info) </script>";
+						//echo '<span style="color:white">'.$_GET["loginErr"].'</span>';
+					}
+				 ?>
+           
+			</form>
+		</div>
             
 			<a href="#">忘记密码?</a>
 			
 			<div class="clear"></div>
-		</div>
+	</div>
 		
 
 		<div class="register w3layouts agileits">

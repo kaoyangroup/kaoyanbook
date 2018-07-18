@@ -1,13 +1,15 @@
-<html>
-<body>
+<?php
+    include_once "../backend/includes/dbh.inc.php";
+?>
+
 <?php 
-$uid = $_POST["Userame"];
-$pwd = $_POST["Password"];
-$con = mysqli_connect("localhost","root","123456","train");
 if(!$con)
 {
 	die('Count not connect');
 }
+$uid = $_POST["Username"];
+$pwd = $_POST["Password"];
+
 $sql = "select * from user where pwd='$pwd' and (uid='$uid' or email='$uid' or mobile='$uid')";
 $result = mysqli_query($con,$sql);
 $num=mysqli_num_rows($result);
@@ -23,5 +25,4 @@ header("Location:login2.php?loginErr='$loginErr'");
 }
 ?>
 
-</body>
-</html>
+
