@@ -107,7 +107,7 @@
   flex-direction: column;
 }
 content {
-  background: #bbbbbb;
+  background:#bbb;
   flex: 1; /* 1 代表盡可能最大，會自動填滿除了 header footer 以外的空間 */
 }
 
