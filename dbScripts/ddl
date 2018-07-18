@@ -28,14 +28,14 @@ CREATE TABLE `Contacts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
-//[from,to]价格
+//[start,end]价格
 CREATE TABLE `Mileprice` (
-  `from` varchar(45) NOT NULL,
-  `to` varchar(45) NOT NULL,
+  `start` varchar(45) NOT NULL,
+  `end` varchar(45) NOT NULL,
   `lineType` varchar(15) NOT NULL,
   `seatType` varchar(15) NOT NULL,
   `price` int(11) NOT NULL,
-  PRIMARY KEY (`from`,`to`,`lineType`,`seatType`)
+  PRIMARY KEY (`start`,`end`,`lineType`,`seatType`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
@@ -88,8 +88,8 @@ CREATE TABLE `Order` (
   `ticketId` varchar(45) not NULL,
   `orderTime` datetime(6) DEFAULT NULL,
   `orderType` int(11) DEFAULT NULL,
-  `from` varchar(45) not NULL,
-  `to` varchar(45) not NULL,
+  `start` varchar(45) not NULL,
+  `end` varchar(45) not NULL,
   PRIMARY KEY (`orderId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -114,11 +114,11 @@ CREATE TABLE `Booking` (
 CREATE TABLE `Margins` (
   `lineId` varchar(15) NOT NULL,
   `date` date NOT NULL,
-  `from` varchar(45) NOT NULL,
-  `to` varchar(45) NOT NULL,
+  `start` varchar(45) NOT NULL,
+  `end` varchar(45) NOT NULL,
   `seatType` varchar(15) NOT NULL,
   `marginTicket` int(11) NOT NULL,
-  PRIMARY KEY (`lineId`,`date`,`from`,`to`,`seatType`)
+  PRIMARY KEY (`lineId`,`date`,`start`,`end`,`seatType`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -----------------Lable   Line ---------------
@@ -156,7 +156,7 @@ INSERT INTO `Line` (`lineId`, `station`, `arrOrder`, `arrTime`, `arrDate`) VALUE
 
 
 -----------------------Lable  Mileprice---------------------------------------------
-INSERT INTO `Mileprice` (`from`, `to`, `lineType`, `seatType`, `price`) VALUES
+INSERT INTO `Mileprice` (`start`, `end`, `lineType`, `seatType`, `price`) VALUES
 ('北京', '上海', 'G', '卧票', 605),
 ('北京', '上海', 'G', '坐票', 555),
 ('北京', '上海', 'K', '卧票', 235),
