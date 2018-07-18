@@ -16,16 +16,13 @@
 <script type='text/javascript' src='js/jquery.particleground.min.js'></script>
 <script type='text/javascript' src='js/demo.js'></script>
 
-
-
 </head>
 
 <body>
 <div id="particles">
 <div class="intro">
 
-<div id="top">
-<div id="toptitle">
+<div id="top"><div id="toptitle">
 
 <div id="clock">
     <p class="date">{{ date }}  {{ time }}</p>
@@ -49,19 +46,21 @@ var clock = new Vue({
         date: ''
     }
 });
-
 var week = ['星期天', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
 var timerID = setInterval(updateTime, 1000);
 updateTime();
+
 function updateTime() {
     var cd = new Date();
-    clock.time = zeroPadding(cd.getHours(), 2) + ':' + zeroPadding(cd.getMinutes(), 2) + ':' + zeroPadding(cd.getSeconds(), 2);
+    
+	clock.time = zeroPadding(cd.getHours(), 2) + ':' + zeroPadding(cd.getMinutes(), 2) + ':' + zeroPadding(cd.getSeconds(), 2);
     clock.date = zeroPadding(cd.getFullYear(), 4) + '-' + zeroPadding(cd.getMonth()+1, 2) + '-' + zeroPadding(cd.getDate(), 2) + ' ' + week[cd.getDay()];
-};
+	};
+
 function zeroPadding(num, digit) {
     var zero = '';
     for(var i = 0; i < digit; i++) {
-        zero += '0';
+		zero += '0';
     }
     return (zero + num).slice(-digit);
 }
@@ -73,7 +72,7 @@ function zeroPadding(num, digit) {
 <img src="image/%E9%A6%96%E9%A1%B5%E8%B4%AD%E7%A5%A8.jpg" alt="" id="buy">
 		<a href="Buy.html" target="_blank">
             <div class="cove">
-                <p>购票</p>
+			  <p>购票</p>
             </div>
          </a>
 	</li>
@@ -82,13 +81,13 @@ function zeroPadding(num, digit) {
 		<a href="UserAll.html" target="_blank">
         	<div class="cove">
         		<p>查看用户信息</p>
-            </div>
+   		  </div>
         </a>
 	</li>
     <li>
 <img src="image/%E9%A6%96%E9%A1%B5%E8%AE%A2%E5%8D%95.jpg" alt="" id="hist">
 		<a href="order.html" target="_blank">
-			<div class="cove">
+		  <div class="cove">
 				<p>查看历史订单</p>
 			</div>
 		</a>
@@ -97,17 +96,19 @@ function zeroPadding(num, digit) {
 </div>
 
 <script type="text/javascript" >
+
 		(function () {
 			var $li =$('#center ul li');
+			
 			$li.hover(function (ev) {
-
 				move.call(this , ev , true);
-
-			},function (ev) {
+		},
+		
+		function (ev) {
 				move.call(this , ev , false);
-			});
-			function move( ev , bool) {
-
+		});
+		
+		function move( ev , bool) {
 				var top = $(this).offset().top;
 				var bottom = top + $(this).height();
 				var left = $(this).offset().left;
@@ -118,82 +119,69 @@ function zeroPadding(num, digit) {
 
 				var sT = Math.abs(y - top),
 					sB = Math.abs(y - bottom),
-					sL = Math.abs(x - left),
-					sR = Math.abs(x - right);
+		
+				sL = Math.abs(x - left),
+				sR = Math.abs(x - right);
 
 				var a = Math.min( sT , sB , sL , sR );
 
 				switch( a ){
-
+					
 					case sT:
 						if (bool) {
-							$(this).find('.cove').css({
-								left:0,
-								top:'-300px'
-							}).animate({
-								top:0
-							},200);
+								$(this).find('.cove').css({
+									left:0,
+									top:'-300px'
+								}).animate({
+								top:0},200);
 						} else {
-							$(this).find('.cove').stop(1,1).animate({
-								top:'-300px'
-							},200);
+								$(this).find('.cove').stop(1,1).animate({
+									top:'-300px'},200);
 						}
 					break;
 
 					case sB:
 						if ( bool ) {
-							$(this).find('.cove').css({
-								left:0,
-								top:'300px'
-							}).animate({
-								top:0
-							},200);							
+								$(this).find('.cove').css({
+									left:0,
+									top:'300px'
+								}).animate({
+									top:0},200);		
 						} else {
-							$(this).find('.cove').stop(1,1).animate({
-								top:'300px'
-							},200);	
+								$(this).find('.cove').stop(1,1).animate({
+									top:'300px'},200);	
 						}
-
 					break;
+					
 					case sL:
 						if ( bool ) {
-							$(this).find('.cove').css({
-								left:'-400px',
-								top:0
-							}).animate({
-								left:0
-							},200);							
+								$(this).find('.cove').css({
+									left:'-400px',
+									top:0
+								}).animate({
+									left:0},200);				
 						} else {
-							$(this).find('.cove').stop(1,1).animate({
-								left:'-400px'
-							},200);	
+								$(this).find('.cove').stop(1,1).animate({
+									left:'-400px'},200);	
 						}
-
 					break;
+					
 					case sR:
 						if ( bool ) {
-							$(this).find('.cove').css({
-								left:'400px',
-								top:0
-							}).animate({
-								left:0
-							},200);							
+								$(this).find('.cove').css({
+									left:'400px',
+									top:0
+								}).animate({
+									left:0},200);							
 						} else {
-							$(this).find('.cove').stop(1,1).animate({
-								left:'400px'
-							},200);	
+								$(this).find('.cove').stop(1,1).animate({
+									left:'400px'},200);	
 						}
-
-					break;
-
-
-
+						break;
 				}
-
 			};
 		})();
 	</script>
-
 
 <div id="bottom">
 <p>版权所有 © 2018 北京邮电大学 计算机学院</p>
