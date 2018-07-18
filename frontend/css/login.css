@@ -41,7 +41,7 @@ body {
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
-	background-image: url(file:///C|/Users/Administrator/Desktop/Train/Tu/%E7%99%BB%E5%BD%95%E8%83%8C%E6%99%AF.jpg);
+	background: url(../image/登录背景.jpg);
 }
 
 body a {

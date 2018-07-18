@@ -24,18 +24,18 @@ CREATE TABLE `user` (
 CREATE TABLE `Contacts` (
   `cid` varchar(45) NOT NULL,
   `uid` varchar(45) NOT NULL,
-  PRIMARY KEY (`cid`,'uid')
+  PRIMARY KEY (`cid`,`uid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
-
+//[from,to]价格
 CREATE TABLE `Mileprice` (
-  `start` varchar(45) NOT NULL,
-  `end` varchar(45) NOT NULL,
+  `from` varchar(45) NOT NULL,
+  `to` varchar(45) NOT NULL,
   `lineType` varchar(15) NOT NULL,
   `seatType` varchar(15) NOT NULL,
   `price` int(11) NOT NULL,
-  PRIMARY KEY (`start`,`end`,`lineType`,`seatType`)
+  PRIMARY KEY (`from`,`to`,`lineType`,`seatType`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
@@ -75,24 +75,29 @@ CREATE TABLE `Seat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
-CREATE TABLE `Operation` (
+CREATE TABLE `Manage` (
   `lineId` varchar(15) NOT NULL,
-  `trainId` varchar(45) NOT NULL,
   `date` date NOT NULL,
-  PRIMARY KEY (`lineId`,`trainId`,`date`)
+  PRIMARY KEY (`lineId`,`date`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 CREATE TABLE `Order` (
   `orderId` int(11) NOT NULL,
-  `userId` varchar(45) NOT NULL,
+  `passengerId` varchar(45) NOT NULL,
   `ticketId` varchar(45) not NULL,
   `orderTime` datetime(6) DEFAULT NULL,
   `orderType` int(11) DEFAULT NULL,
+  `from` varchar(45) not NULL,
+  `to` varchar(45) not NULL,
   PRIMARY KEY (`orderId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-
+create table `Myorder`(
+  `userId` varchar(45) not null,
+  `orderId` varchar(45) not null,
+  primary key (`orderId`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `Booking` (
   `ticketId` varchar(45) NOT NULL,
@@ -101,7 +106,7 @@ CREATE TABLE `Booking` (
   `marginCode` binary(6) DEFAULT NULL,
   `marginTicket` int(11) DEFAULT NULL,
   `date` date DEFAULT NULL,
-  PRIMARY KEY (`ticketId`),
+  PRIMARY KEY (`ticketId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
@@ -109,15 +114,15 @@ CREATE TABLE `Booking` (
 CREATE TABLE `Margins` (
   `lineId` varchar(15) NOT NULL,
   `date` date NOT NULL,
-  `start` varchar(45) NOT NULL,
-  `end` varchar(45) NOT NULL,
+  `from` varchar(45) NOT NULL,
+  `to` varchar(45) NOT NULL,
   `seatType` varchar(15) NOT NULL,
   `marginTicket` int(11) NOT NULL,
-  PRIMARY KEY (`lineId`,`date`,`start`,`end`,`seatType`)
+  PRIMARY KEY (`lineId`,`date`,`from`,`to`,`seatType`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -----------------Lable   Line ---------------
-INSERT INTO `line` (`lineId`, `station`, `arrOrder`, `arrTime`, `arrDate`) VALUES
+INSERT INTO `Line` (`lineId`, `station`, `arrOrder`, `arrTime`, `arrDate`) VALUES
 ('G001', '上海', 4, '16:00:00', '当日'),
 ('G001', '北京', 1, '07:00:00', '当日'),
 ('G001', '南京', 3, '14:00:00', '当日'),
@@ -151,7 +156,7 @@ INSERT INTO `line` (`lineId`, `station`, `arrOrder`, `arrTime`, `arrDate`) VALUE
 
 
 -----------------------Lable  Mileprice---------------------------------------------
-INSERT INTO `Mileprice` (`start`, `end`, `lineType`, `seatType`, `price`) VALUES
+INSERT INTO `Mileprice` (`from`, `to`, `lineType`, `seatType`, `price`) VALUES
 ('北京', '上海', 'G', '卧票', 605),
 ('北京', '上海', 'G', '坐票', 555),
 ('北京', '上海', 'K', '卧票', 235),
@@ -473,7 +478,7 @@ INSERT INTO `Mileprice` (`start`, `end`, `lineType`, `seatType`, `price`) VALUES
 
 
 --------------------------Lable Train------------------------------------
-INSERT INTO `train` (`trainId`, `trainType`, `carriages`) VALUES
+INSERT INTO `Train` (`trainId`, `trainType`, `carriages`) VALUES
 ('G001', 'G', 3),
 ('G002', 'G', 3),
 ('K001', 'K', 3),
@@ -484,7 +489,9 @@ INSERT INTO `train` (`trainId`, `trainType`, `carriages`) VALUES
 
 
 --------------------------Lable Carriage----------------------------------------------
-INSERT INTO `carriage` (`carriageId`, `trainId`, `carriageNo`, `carriageType`, `seatCnt`) VALUES
+---------------------carriageID = md5(trainId + carriageNo)----------------------------
+
+INSERT INTO `Carriage` (`carriageId`, `trainId`, `carriageNo`, `carriageType`, `seatCnt`) VALUES
 ('173f4292ad6b715d4e5ca2f2cf33cbbe', 'T001', 2, '坐票', 40),
 ('1dfb408101b742cf80f68e7e92eba1e1', 'K002', 2, '坐票', 40),
 ('2490fc87368b8a6eee4441adea426ab6', 'G002', 1, '卧票', 30),
@@ -509,7 +516,8 @@ INSERT INTO `carriage` (`carriageId`, `trainId`, `carriageNo`, `carriageType`, `
 
 
 -----------------------------------------------Lable Seat--------------------------------------
-INSERT INTO `seat` (`seatId`, `seatNo`, `carriageId`) VALUES
+------------------------------seatID = md5(CarriageId + seatNo)--------------------------------
+INSERT INTO `Seat` (`seatId`, `seatNo`, `carriageId`) VALUES
 ('0024afe2e03772dd61724558e705985e', 'B', '3e1eb03a6322ef7c3081cba6c8da7e76'),
 ('003c4833755b5b7867283eaeb48ee6d2', 'A', '3e1eb03a6322ef7c3081cba6c8da7e76'),
 ('0066ec2465ed2bc122172ad0726eddcf', 'B', '5c61c6807529c4cf2ac50a9dba03eaf6'),
@@ -1158,7 +1166,11 @@ INSERT INTO `seat` (`seatId`, `seatNo`, `carriageId`) VALUES
 ('d49b46ec4439bd862c6ae6e7a3431fb1', 'B', '1dfb408101b742cf80f68e7e92eba1e1'),
 ('d5180d476c0de586fca8478283997e97', 'D', 'be70d53801332f3b4f6b6375877eeee2'),
 ('d54404fd8290159cd83c9bab47af5305', 'B', 'be70d53801332f3b4f6b6375877eeee2');
-INSERT INTO `seat` (`seatId`, `seatNo`, `carriageId`) VALUES
+
+
+
+
+INSERT INTO `Seat` (`seatId`, `seatNo`, `carriageId`) VALUES
 ('d557c295b98f409ebd29ca4d70869194', 'A', '1dfb408101b742cf80f68e7e92eba1e1'),
 ('d559bc8d9e9ef1fb44732408d6dbe043', 'B', '2490fc87368b8a6eee4441adea426ab6'),
 ('d56c42e4d8c84d0038499ba9dbcdd350', 'B', '2490fc87368b8a6eee4441adea426ab6'),
@@ -1281,4 +1293,136 @@ INSERT INTO `seat` (`seatId`, `seatNo`, `carriageId`) VALUES
 ('fedc5f8b465e53c8f6be9123f80bda40', 'C', '4a2290545a07fd7ee230dd28b41114aa'),
 ('fee7adacf27aba165b651cc1c3781424', 'B', 'bbf2251c56afdbcd2b69d607948097bb'),
 ('ff3aef2eae46e75f9f77d3dd16da714e', 'A', '557766ba5b2e543f72aa60a84b288238');
+
+
+-----------------------Lable Manage-------------------
+INSERT INTO `Manage` (`lineId`, `date`) VALUES
+('G001', '2018-07-19'),
+('G001', '2018-07-20'),
+('G001', '2018-07-21'),
+('G001', '2018-07-22'),
+('G001', '2018-07-23'),
+('G001', '2018-07-24'),
+('G001', '2018-07-25'),
+('G001', '2018-07-26'),
+('G001', '2018-07-27'),
+('G001', '2018-07-28'),
+('G001', '2018-07-29'),
+('G001', '2018-07-30'),
+('G001', '2018-07-31'),
+('G001', '2018-08-01'),
+('G001', '2018-08-02'),
+('G001', '2018-08-03'),
+('G001', '2018-08-04'),
+('G001', '2018-08-05'),
+('G001', '2018-08-06'),
+('G001', '2018-08-07'),
+('G001', '2018-08-08'),
+('G001', '2018-08-09'),
+('G001', '2018-08-10'),
+('G001', '2018-08-11'),
+('G001', '2018-08-12'),
+('G001', '2018-08-13'),
+('G001', '2018-08-14'),
+('G001', '2018-08-15'),
+('G001', '2018-08-16'),
+('G001', '2018-08-17'),
+('G002', '2018-07-19'),
+('G002', '2018-07-20'),
+('G002', '2018-07-21'),
+('G002', '2018-07-22'),
+('G002', '2018-07-23'),
+('G002', '2018-07-24'),
+('G002', '2018-07-25'),
+('G002', '2018-07-26'),
+('G002', '2018-07-27'),
+('G002', '2018-07-28'),
+('G002', '2018-07-29'),
+('G002', '2018-07-30'),
+('G002', '2018-07-31'),
+('G002', '2018-08-01'),
+('G002', '2018-08-02'),
+('G002', '2018-08-03'),
+('G002', '2018-08-04'),
+('G002', '2018-08-05'),
+('G002', '2018-08-06'),
+('G002', '2018-08-07'),
+('G002', '2018-08-08'),
+('G002', '2018-08-09'),
+('G002', '2018-08-10'),
+('G002', '2018-08-11'),
+('G002', '2018-08-12'),
+('G002', '2018-08-13'),
+('G002', '2018-08-14'),
+('G002', '2018-08-15'),
+('G002', '2018-08-16'),
+('G002', '2018-08-17'),
+('K001', '2018-07-19'),
+('K001', '2018-07-22'),
+('K001', '2018-07-25'),
+('K001', '2018-07-28'),
+('K001', '2018-07-31'),
+('K001', '2018-08-01'),
+('K001', '2018-08-04'),
+('K001', '2018-08-07'),
+('K001', '2018-08-10'),
+('K001', '2018-08-13'),
+('K001', '2018-08-16'),
+('K002', '2018-07-19'),
+('K002', '2018-07-22'),
+('K002', '2018-07-25'),
+('K002', '2018-07-28'),
+('K002', '2018-07-31'),
+('K002', '2018-08-01'),
+('K002', '2018-08-04'),
+('K002', '2018-08-07'),
+('K002', '2018-08-10'),
+('K002', '2018-08-13'),
+('K002', '2018-08-16'),
+('K003', '2018-07-19'),
+('K003', '2018-07-22'),
+('K003', '2018-07-25'),
+('K003', '2018-07-28'),
+('K003', '2018-07-31'),
+('K003', '2018-08-01'),
+('K003', '2018-08-04'),
+('K003', '2018-08-07'),
+('K003', '2018-08-10'),
+('K003', '2018-08-13'),
+('K003', '2018-08-16'),
+('T001', '2018-07-19'),
+('T001', '2018-07-21'),
+('T001', '2018-07-23'),
+('T001', '2018-07-25'),
+('T001', '2018-07-27'),
+('T001', '2018-07-29'),
+('T001', '2018-07-31'),
+('T001', '2018-08-01'),
+('T001', '2018-08-03'),
+('T001', '2018-08-05'),
+('T001', '2018-08-07'),
+('T001', '2018-08-09'),
+('T001', '2018-08-11'),
+('T001', '2018-08-13'),
+('T001', '2018-08-15'),
+('T001', '2018-08-17'),
+('T002', '2018-07-19'),
+('T002', '2018-07-21'),
+('T002', '2018-07-23'),
+('T002', '2018-07-25'),
+('T002', '2018-07-27'),
+('T002', '2018-07-29'),
+('T002', '2018-07-31'),
+('T002', '2018-08-01'),
+('T002', '2018-08-03'),
+('T002', '2018-08-05'),
+('T002', '2018-08-07'),
+('T002', '2018-08-09'),
+('T002', '2018-08-11'),
+('T002', '2018-08-13'),
+('T002', '2018-08-15'),
+('T002', '2018-08-17');
+
+
+
 
