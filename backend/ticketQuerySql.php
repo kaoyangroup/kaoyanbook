@@ -3,16 +3,10 @@
 ?>
 
 
-<html>
-<head><title>Ticket Query Sql</title></head>
+<?php
+/*
+车次 | 出发站 | 出发时间 | 目的站 | 到达时间 | 途经时间 | 一等座余票 | 一等座价格 | 二等座余票 | 二等座价格 | 卧铺余票 | 卧铺价格 | 硬座余票 | 硬座价格
 
-<body>
-	<?php
-		$from = $_POST['from'];
-		$to = $_POST['to'];
-		$departure = $_POST['departure'];
-		echo $from." ",$to." ",$departure." ";
-	?>
-</body>
+*/
 
-</html>
+?>
