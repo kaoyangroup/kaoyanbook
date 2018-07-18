@@ -14,7 +14,7 @@ CREATE TABLE `user` (
   `name` varchar(45) NOT NULL,
   `cardType` int(11) NOT NULL,
   `cardNo` varchar(45) NOT NULL,
-  `email` varchar(45) DEFAULT NULL,
+  `email` varchar(45) NOT NULL,
   `mobile` varchar(45) NOT NULL,
   `userType` int(11) NOT NULL,
   `account` double DEFAULT NULL,
