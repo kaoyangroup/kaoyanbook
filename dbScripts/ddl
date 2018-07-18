@@ -88,8 +88,8 @@ CREATE TABLE `Order` (
   `ticketId` varchar(45) not NULL,
   `orderTime` datetime(6) DEFAULT NULL,
   `orderType` int(11) DEFAULT NULL,
-  `from` varchar(45) not NULL,
-  `to` varchar(45) not NULL,
+  `start` varchar(45) not NULL,
+  `end` varchar(45) not NULL,
   PRIMARY KEY (`orderId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

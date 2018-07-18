@@ -9,6 +9,7 @@ body {
 	background-color: #CCC;
 }
 </style>
+
 </head>
 
 <body>
@@ -33,10 +34,11 @@ body {
               </thead>
                   <tbody>
                    <?php
-
+                   ini_set('date.timezone','Asia/Shanghai');
+                  require_once '../backend/order_back.php';
                   $uid = $_COOKIE["cur_uid"];
                   $i = 0;
-                  $con = mysqli_connect("localhost","root","123456","train");
+                  $con = mysqli_connect("localhost","root","zzzzzzwj","test");
                   if(!$con)
                   {
                     die('Count not connect');
@@ -44,11 +46,17 @@ body {
 
                   $sql = "select * from Myorder where userId='$uid'";
                   $result = mysqli_query($con,$sql);
+				  if(!$result){
+					  printf("Error: %s\n", mysqli_error($con));
+					  exit();
+                    }
+                //   $toShowList = array();
                   while($row=mysqli_fetch_array($result))
                   {
+					  
                      $orderId = $row["orderId"];
                      //Order
-                     $sql_order = "select * from Order where orderId='$orderId' and orderType=1";
+                     $sql_order = "select * from Order1 where orderId='$orderId' and orderType=1";
                      $res_order = mysqli_query($con,$sql_order);
                      if(mysqli_num_rows($res_order) == 0)
                      {
@@ -57,13 +65,14 @@ body {
                      $row_order = mysqli_fetch_array($res_order);
                      $orderTime = $row_order["orderTime"];
                      $passengerId = $row_order["passengerId"];
-                     $from = $row_order["from"];
-                     $to = $row_order["to"];
+                     $from = $row_order["start"];
+                     $to = $row_order["end"];
                      /*if(大于半小时)
                      {
                         退票;
                         continue;
                      }*/
+                     
                      $i += 1;
                      $ticketId = $row_order["ticketId"];
                      //Booking
@@ -86,7 +95,7 @@ body {
                      $res_carriage = mysqli_query($con,$sql_carriage);
                      $row_carriage = mysqli_fetch_array($res_carriage);
                      $trainId = $row_carriage["trainId"];
-                     $carriageType = $row_carriage["carriageType"];
+                     $seatType = $row_carriage["carriageType"];
                      $carriageNo = $row_carriage["carriageNo"];
 
                      //Train
@@ -107,16 +116,23 @@ body {
                      echo   "<td>".$i."</td>";
                      echo   "<td>".$from."</td>";
                      echo   "<td>".$to."</td>";
-                     echo   "<td>".$trianId."</td>";
+                     echo   "<td>".$trainId."</td>";
                      echo   "<td>".$carriageNo."号车厢".$seatNo."号座位</td>";
                      echo   "<td>".$name."</td>";
                      echo   "<td>".$goDate."</td>";
                      echo   "<td>1</td>";
                      if(strtotime($goDate)-strtotime($cur_time) >= 60*30)
                      {
-                     echo   "<input type='button' id='button2' value='退票'  onclick='Onsubmit()' ><script type='text/javascript'>";
-                     echo   "function Onsubmit(){  window.location.href='order_back.php?orderId='+$orderId;}</script>";
-                      }
+                        echo   "<input type='button' id='button2' value='退票'  onclick='Onsubmit()' >";  
+                        echo   "<script type='text/javascript'>
+                                function Onsubmit(){
+                                    var func = '<?php 
+                                    update($con,$orderId,$uid,1);
+                                ?>'
+                                alert('退票成功！');
+                                }
+                                </script>";
+                    }
                      echo "<tr>";
                   }
                   ?>
