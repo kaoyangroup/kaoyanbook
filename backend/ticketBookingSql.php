@@ -1,7 +1,9 @@
 <?php
 /*
-订票:   
+订票:
+$uid = $_COOKIE["cur_uid"];   
 */
-echo $_COOKIE["cur_uid"];
+
+
 
 ?>
