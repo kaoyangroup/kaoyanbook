@@ -11,7 +11,7 @@
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<title>余票查询</title>
+	<title>Ticket select page</title>
 
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -68,7 +68,7 @@
 						<div id="tab-1">
 							<div class="submit-form">
 								<h4>余票查询</h4>
-								<form id="form-submit" action="ticketTable.html" method="post">
+								<form id="form-submit" action="../backend/ticketTable.php" method="post">
 									<div class="row">
 										<!-- from-->
 										<div class="col-md-12">
