@@ -22,7 +22,7 @@ body {
     	<a href="index.html" target="_blank"><div>首页</div></a>
     </li>
 	<li>
-    	<a href="Buy.html" target="_blank"><div>购票</div></a>
+    	<a href="ticketQuery.php" target="_blank"><div>购票</div></a>
     </li>
     <li>
     	<a href="UserAll.html" target="_blank"><div>查看用户信息</div></a>

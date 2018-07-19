@@ -3,7 +3,7 @@
 	height: 30px;
 	margin: 0px;
 	padding: 0px;
-	background-image: url(image/%E5%B0%81%E9%9D%A2%E4%B8%8A%E6%A0%8F.png);
+	background-image: url(../image/%E5%B0%81%E9%9D%A2%E4%B8%8A%E6%A0%8F.png);
 }
 #toptitle #login {
 	float: right;
@@ -19,7 +19,7 @@
 	background-color: #757679;
 }
 #toptitle #login:active {
-	background-image: url(image/%E5%B0%81%E9%9D%A2%E4%B8%8A%E6%A0%8F%E6%8C%89%E9%92%AE%E6%8C%89%E4%B8%8B.png);
+	background-image: url(../image/%E5%B0%81%E9%9D%A2%E4%B8%8A%E6%A0%8F%E6%8C%89%E9%92%AE%E6%8C%89%E4%B8%8B.png);
 }
 #kePublic {
 	height: 1000px;
@@ -27,7 +27,7 @@
 }
 
 #toptitle #login #image {
-	background-image: url(image/%E5%B0%81%E9%9D%A2%E4%B8%8A%E6%A0%8F%E7%AE%AD%E5%A4%B4.png);
+	background-image: url(../image/%E5%B0%81%E9%9D%A2%E4%B8%8A%E6%A0%8F%E7%AE%AD%E5%A4%B4.png);
 	background-repeat: no-repeat;
 	height: 30px;
 	width: 30px;

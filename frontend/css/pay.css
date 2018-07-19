@@ -1,10 +1,14 @@
+	
 #title {
 	margin-left:25px;
 	margin-top:30px;
 }
+
+
 #info {
-	margin-left:80px;
-	margin-top:50px;
+	margin-left: 80px;
+	margin-top: 50px;
+	width: 800px;
 }
 
 #info p {
@@ -12,7 +16,7 @@
 }
 
 #button1 {
-	width: 250px;
+	width: 200px;
 	height: 45px;
 	margin-left: 50px;
 	margin-top: 50px;
@@ -48,7 +52,7 @@
 }
 
 #button2 {
-	width: 250px;
+	width: 200px;
 	height: 45px;
 	margin-left: 80px;
 	margin-top: 50px;
@@ -81,6 +85,30 @@
     background-origin: padding-box;
     background-clip: padding-box;
     background-color: #445565;
+}
+
+
+#info #stt {
+	width: 600px;
+}
+#info #stt #click #btn1  {
+	float: left;
+	width:300px;
+}
+#info #stt #click #btn2  {
+	float: right;
+	width:300px;
+}
+
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+content {
+  background:#bbb;
+  flex: 1; /* 1 代表盡可能最大，會自動填滿除了 header footer 以外的空間 */
 }
 
 

@@ -271,7 +271,9 @@
 	padding-left: 68px;
 	height: 600px;
 	width: 88%;
+	padding-top: 20px;
 }
+
 #pep #c ul {
 	list-style-type: none;
 }
@@ -281,4 +283,7 @@
 #pep #topP {
 	height: 100px;
 	margin: 0px;
+}
+#pep #c p span  {
+	color: #CCC;
 }

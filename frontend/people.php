@@ -18,7 +18,7 @@
     	<a href="index.html" target="_blank"><div>首页</div></a>
     </li>
 	<li>
-    	<a href="Buy.html" target="_blank"><div>购票</div></a>
+    	<a href="ticketQuery.php" target="_blank"><div>购票</div></a>
     </li>
     <li>
     	<a href="order.html" target="_blank"><div>查看历史订单</div></a>
@@ -76,7 +76,7 @@
     </table>
 	<table>
 		<form name='peo' action='addContacts.php' method='post'>
-		<p>姓名： <input type="text" name="name" /></p>
+		<p>姓名：<span>补补</span><input type="text" name="name" /></p>
 		<p>身份证号：<input type="text" name="cardNo" /></p>
 		<div> 
 			<input type="submit" value="添加联系人"/>
