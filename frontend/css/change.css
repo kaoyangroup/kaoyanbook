@@ -13,7 +13,13 @@
 
 #changePas {
 	font-family: "微软雅黑";
+	padding-left: 45px;
 }
 #changePas #center p span {
 	color: #FFF;
+}
+h3 {
+	color: #26394E;
+	font-size: 35px;
+	line-height: 40px;
 }

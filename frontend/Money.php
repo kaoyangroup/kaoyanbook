@@ -28,7 +28,7 @@ body {
     	<a href="order.html" target="_blank"><div>查看历史订单</div></a>
     </li>
     <li>
-    	<a href="login2.php" target="_self"><div>退出登录</div></a>
+    	<a href="login2.php" target="_blank"><div>退出登录</div></a>
     </li>
 </ul>
 </div>

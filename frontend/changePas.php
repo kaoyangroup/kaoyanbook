@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>密码修改</title>
-<link href="change.css" rel="stylesheet" type="text/css" />
+<link href="css/change.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body id='changePas'>

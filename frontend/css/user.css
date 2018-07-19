@@ -41,7 +41,7 @@
 	line-height: 50px;
 }
 #info #topI #r ul li a:active {
-	color: #C9F;
+	color: #26394E;
 }
 #info #topI #r ul li div:hover {
 	background-image: url(../image/%E5%AD%90%E9%A1%B5%E9%9D%A2%E6%8C%89%E9%92%AE%E8%A7%A6%E7%A2%B0.png);
@@ -113,6 +113,7 @@
 #safe #s p a {
 	text-decoration: none;
 	color: #333;
+	font-size: 25px;
 }
 #safe #s p a:hover {
 	color: #4f7299;
@@ -186,7 +187,7 @@
 	line-height: 50px;
 }
 #safe #topS #r ul li a:active {
-	color: #C9F;
+	color: #26394E;
 }
 #safe #topS #r ul li div:hover {
 	background-image: url(../image/%E5%AD%90%E9%A1%B5%E9%9D%A2%E6%8C%89%E9%92%AE%E8%A7%A6%E7%A2%B0.png);
@@ -237,7 +238,7 @@
 	line-height: 50px;
 }
 #pep #topP #r ul li a:active {
-	color: #C9F;
+	color: #26394E;
 }
 #pep #topP #r ul li div:hover {
 	background-image: url(../image/%E5%AD%90%E9%A1%B5%E9%9D%A2%E6%8C%89%E9%92%AE%E8%A7%A6%E7%A2%B0.png);

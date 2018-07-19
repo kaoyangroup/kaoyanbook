@@ -79,3 +79,57 @@
     background-clip: padding-box;
     background-color: #445565;
 }
+
+#t h3 {
+	color: #26394E;
+	line-height: 10px;
+	font-size: 35px;
+}
+#t {
+	padding-left: 40px;
+	width: 400px;
+	float: left;
+}
+#top #r ul li div {
+	text-align: center;
+	height: 60px;
+}
+#top #r ul li a {
+	color: #26394E;
+	text-decoration: none;
+	line-height: 50px;
+}
+#top #r ul li a:active {
+	color: #FFF;
+}
+#top #r ul li div:hover {
+	background-image: url(../image/%E5%AD%90%E9%A1%B5%E9%9D%A2%E6%8C%89%E9%92%AE%E8%A7%A6%E7%A2%B02.0.png);
+}
+
+body {
+	font-family: "微软雅黑";
+	margin: 0px;
+}
+
+
+#top #r ul li {
+	list-style-type: none;
+	color: #26394E;
+	width: 150px;
+	float: left;
+}
+#top #r ul {
+	float: right;
+	margin-top: 0px;
+}
+#top {
+	height: 90px;
+	margin: 0px;
+	background-color:#FFF;
+}
+
+#c {
+	margin-left: 0px;
+	padding-left: 40px;
+	padding-top: 20px;
+}

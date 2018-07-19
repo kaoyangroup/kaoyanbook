@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>无标题文档</title>
-<link href="history.css" rel="stylesheet" type="text/css" />
+<title>已完成订单</title>
+<link href="css/history.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
 body {
 	background-color: #CCC;
@@ -13,27 +13,45 @@ body {
 </head>
 
 <body>
-<table border="1" cellpadding="3" cellspacing="20">
-<p>已完成订单：</p>
-      <tbody>
+
+<div id="top">
+<div id="t"><h3>已完成订单</h3></div>
+
+<div id="r">
+<ul>
+	<li>
+    	<a href="index.html" target="_blank"><div>首页</div></a>
+    </li>
+	<li>
+    	<a href="Buy.html" target="_blank"><div>购票</div></a>
+    </li>
+    <li>
+    	<a href="UserAll.html" target="_blank"><div>查看用户信息</div></a>
+    </li>
+    <li>
+    	<a href="login2.php" target="_blank"><div>退出登录</div></a>
+    </li>
+</ul>
+</div>
+</div>
+
+<div id="c">
+<table width="1000" border="1" cellpadding="5" cellspacing="1" border="1">
+        <thead>
         <tr> 
-            <td>  <table>
-            	<p>订单信息：</p>
-                 <thead>
-                    <tr>
-                     <th width="60">序号</th>
-                     <th width="72">出发站</th>
-                     <th width="88">终点站</th>
-                      <th width="72">车次信息</th>
-                      <th width="220">席位信息</th>
-                      <th width="100">旅客姓名</th>
-                      <th width="250">出发时间</th>
-                      <th width="72">张数</th>
-                      <th width="72">金额</th>
-                    </tr>
-                   
-              </thead>
-                  <tbody>
+             <th width="40">序号</th>
+             <th width="80">出发站</th>
+             <th width="80">终点站</th>
+             <th width="80">车次信息</th>
+             <th width="180">席位信息</th>
+             <th width="160">旅客姓名</th>
+             <th width="130">出发时间</th>
+             <th width="40">张数</th>
+             <th width="60">金额</th>
+             <th width="70">选项</th>
+        </tr></thead>
+             
+        <tbody>
                    <?php
                    ini_set('date.timezone','Asia/Shanghai');
                   
@@ -145,23 +163,12 @@ body {
                                 </script>";
                         echo "</td>";
                     }
-                     echo "<tr>";
+                     echo "</tr>";
                   }
                   ?>
-                  </tbody>
-            </table>
-            </td>
-        </tr>
-        
-        
-        
-        <tr>
-            <td><table>
-            </table></td>
-        </tr>
-      
-      
-   
+          </tbody>
+     
     </table>
+    </div>
 </body>
 </html>
