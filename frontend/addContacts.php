@@ -24,5 +24,5 @@
 			echo "<script>alert('添加成功！');window.location.href='people.php';</script>";
 		}
 	}
-	
+	mysqli_close($con);
 ?>
