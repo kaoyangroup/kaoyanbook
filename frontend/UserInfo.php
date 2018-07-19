@@ -4,14 +4,33 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>个人信息</title>
 <style type="text/css">
-@import url("user.css");
+@import url("css/user.css");
 </style>
 </head>
 
 <body id="info">
-<h3>个人信息</h3>
-<div>
+<div id="topI">
+<div id="t"><h3>个人信息</h3></div>
 
+<div id="r">
+<ul>
+	<li>
+    	<a href="index.html" target="_blank"><div>首页</div></a>
+    </li>
+	<li>
+    	<a href="Buy.html" target="_blank"><div>购票</div></a>
+    </li>
+    <li>
+    	<a href="order.html" target="_blank"><div>查看历史订单</div></a>
+    </li>
+    <li>
+    	<a href="login2.php" target="_self"><div>退出登录</div></a>
+    </li>
+</ul>
+</div>
+</div>
+
+<div id="c">
 <p>基本信息</p>
 <ul>
 <?php

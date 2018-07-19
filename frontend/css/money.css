@@ -1,7 +1,9 @@
 @charset "utf-8";
 #seeMoney {
-	margin-top: 30px;
-	margin-left: 50px;
+	font-family: "微软雅黑";
+	background-color: #26394E;
+	margin: 0px;
+	padding: 0px;
 }
 #seeMoney #button a input {
 	margin-left: 0px;
@@ -37,4 +39,64 @@
 	height: 300px;
 	width: 500px;
 	margin-left: 50px;
+}
+
+
+#seeMoney #t h3 {
+	color: #CCC;
+	line-height: 30px;
+	font-size: 35px;
+}
+#seeMoney #t {
+	padding-left: 40px;
+	width: 400px;
+	float: left;
+}
+#seeMoney #topM #r ul li div {
+	text-align: center;
+	height: 60px;
+}
+#seeMoney #topM #r ul li a {
+	color: #FFF;
+	text-decoration: none;
+	line-height: 50px;
+}
+#seeMoney #topM #r ul li a:active {
+	color: #C9F;
+}
+#seeMoney #topM #r ul li div:hover {
+	background-image: url(../image/%E5%AD%90%E9%A1%B5%E9%9D%A2%E6%8C%89%E9%92%AE%E8%A7%A6%E7%A2%B0.png);
+}
+
+
+
+
+#seeMoney #topM #r ul li {
+	list-style-type: none;
+	color: #FFF;
+	width: 150px;
+	float: left;
+}
+#seeMoney #topM #r ul {
+	float: right;
+	margin-top: 0px;
+}
+
+#seeMoney #c {
+	float: left;
+	margin-left: 50px;
+	font-family: "微软雅黑";
+	background-color: #CCC;
+	padding-left: 20px;
+	width: 90%;
+}
+#seeMoney #c ul {
+	list-style-type: none;
+}
+#seeMoney #c p {
+	color: #003;
+}
+#seeMoney #topM {
+	height: 100px;
+	margin: 0px;
 }

@@ -21,23 +21,72 @@
 	background-repeat: no-repeat;
 }
 
-#info h3 {
-	color: #003;
-	font-family: "微软雅黑";
+#info #t h3 {
+	color: #CCC;
+	line-height: 30px;
+	font-size: 35px;
 }
+#info #t {
+	padding-left: 40px;
+	width: 400px;
+	float: left;
+}
+#info #topI #r ul li div {
+	text-align: center;
+	height: 60px;
+}
+#info #topI #r ul li a {
+	color: #FFF;
+	text-decoration: none;
+	line-height: 50px;
+}
+#info #topI #r ul li a:active {
+	color: #C9F;
+}
+#info #topI #r ul li div:hover {
+	background-image: url(../image/%E5%AD%90%E9%A1%B5%E9%9D%A2%E6%8C%89%E9%92%AE%E8%A7%A6%E7%A2%B0.png);
+}
+
+
+
+
+#info #topI #r ul li {
+	list-style-type: none;
+	color: #FFF;
+	width: 150px;
+	float: left;
+}
+#info #topI #r ul {
+	float: right;
+	margin-top: 0px;
+}
+
+
 #info {
-	margin-left: 25px;
-}
-#info div {
-	margin-left: 20px;
 	font-family: "微软雅黑";
+	background-color: #26394E;
+	margin: 0px;
+	padding: 0px;
 }
-#info div ul {
+#info #c {
+	float: left;
+	margin-left: 50px;
+	font-family: "微软雅黑";
+	background-color: #CCC;
+	padding-left: 20px;
+	width: 90%;
+}
+#info #c ul {
 	list-style-type: none;
 }
-#info div p {
+#info #c p {
 	color: #003;
 }
+#info #topI {
+	height: 100px;
+	margin: 0px;
+}
+
 #safe #s input {
 	margin-top: 35px;
 	width: 80px;
@@ -52,7 +101,7 @@
 	margin-right: 25px;
 	margin-left: 0px;
 	text-align: center;
-	background-image: url(../image/%E8%B4%A6%E5%8F%B7%E5%AE%89%E5%85%A8%E6%A1%86%E8%83%8C%E6%99%AF.png);
+	background-color: #C9F;
 }
 #safe #s #sA #img {
 	height: 200px;
@@ -78,7 +127,7 @@
 	margin-right: 25px;
 	margin-left: 25px;
 	text-align: center;
-	background-image: url(../image/%E8%B4%A6%E5%8F%B7%E5%AE%89%E5%85%A8%E6%A1%86%E8%83%8C%E6%99%AF.png);
+	background-color: #C9F;
 }
 #safe #s #word {
 	font-size: 25px;
@@ -101,7 +150,7 @@
 	margin-right: 10px;
 	margin-left: 25px;
 	text-align: center;
-	background-image: url(../image/%E8%B4%A6%E5%8F%B7%E5%AE%89%E5%85%A8%E6%A1%86%E8%83%8C%E6%99%AF.png);
+	background-color: #C9F;
 }
 #safe #s #sC #img {
 	height: 200px;
@@ -119,10 +168,10 @@
 }
 #safe h3 {
 	color: #CCC;
-	line-height: 35px;
+	line-height: 30px;
 	font-size: 35px;
 }
-#t {
+#safe #t {
 	padding-left: 40px;
 	width: 400px;
 	float: left;
@@ -144,8 +193,6 @@
 }
 
 
-
-
 #safe #topS #r ul li {
 	list-style-type: none;
 	color: #FFF;
@@ -163,9 +210,74 @@
 	padding-left: 150px;
 	padding-top: 0px;
 	height: 350px;
-	margin-top: 200px;
+	margin-top: 130px;
 }
 #safe #topS {
+	height: 100px;
+	margin: 0px;
+}
+
+#pep #t h3 {
+	color: #CCC;
+	line-height: 30px;
+	font-size: 35px;
+}
+#pep #t {
+	padding-left: 40px;
+	width: 400px;
+	float: left;
+}
+#pep #topP #r ul li div {
+	text-align: center;
+	height: 60px;
+}
+#pep #topP #r ul li a {
+	color: #FFF;
+	text-decoration: none;
+	line-height: 50px;
+}
+#pep #topP #r ul li a:active {
+	color: #C9F;
+}
+#pep #topP #r ul li div:hover {
+	background-image: url(../image/%E5%AD%90%E9%A1%B5%E9%9D%A2%E6%8C%89%E9%92%AE%E8%A7%A6%E7%A2%B0.png);
+}
+
+
+#pep #topP #r ul li {
+	list-style-type: none;
+	color: #FFF;
+	width: 150px;
+	float: left;
+}
+#pep #topP #r ul {
+	float: right;
+	margin-top: 0px;
+}
+
+
+#pep {
+	font-family: "微软雅黑";
+	background-color: #26394E;
+	margin: 0px;
+	padding: 0px;
+}
+#pep #c {
+	float: left;
+	margin-left: 50px;
+	font-family: "微软雅黑";
+	background-color: #CCC;
+	padding-left: 75px;
+	height: 600px;
+	width: 90%;
+}
+#pep #c ul {
+	list-style-type: none;
+}
+#pep #c p {
+	color: #003;
+}
+#pep #topP {
 	height: 100px;
 	margin: 0px;
 }

@@ -2,21 +2,43 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>无标题文档</title>
+<title>常用联系人</title>
+<style type="text/css">
+@import url("css/user.css");
+</style>
 </head>
 
-<body>
+<body id="pep">
+<div id="topP">
+<div id="t"><h3>常用联系人</h3></div>
 
-<div class=displaytable>
-    <p>常用联系人:</p>
-    <table border="1" cellpadding="3" cellspacing="20">
+<div id="r">
+<ul>
+	<li>
+    	<a href="index.html" target="_blank"><div>首页</div></a>
+    </li>
+	<li>
+    	<a href="Buy.html" target="_blank"><div>购票</div></a>
+    </li>
+    <li>
+    	<a href="order.html" target="_blank"><div>查看历史订单</div></a>
+    </li>
+    <li>
+    	<a href="login2.php" target="_self"><div>退出登录</div></a>
+    </li>
+</ul>
+</div>
+</div>
+
+<div id="c" class="displaytable">
+    <table width="1000" border="1" cellpadding="8" cellspacing="0.1">
       <thead>
         <tr>
-          <th>姓名</th>
-          <th>证件类型</th>
-          <th>证件号码</th>
-          <th>手机号码</th>
-          <th>旅客类型</th>
+          <th width="100">姓名</th>
+          <th width="150">证件类型</th>
+          <th width="300">证件号码</th>
+          <th width="200">手机号码</th>
+          <th width="100">旅客类型</th>
         </tr>
       </thead>
       <?php

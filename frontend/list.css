@@ -115,3 +115,6 @@
 	padding-top: 5px;
 }
 	
+#list #menu .menu-inner #listcontent ul li a:hover {
+	color: #26394E;
+}

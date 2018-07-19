@@ -3,7 +3,7 @@
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>无标题文档</title>
+<title>账户余额</title>
 <style type="text/css">
 body {
 	background-color: #CCC;
@@ -12,10 +12,29 @@ body {
 <link href="css/money.css" rel="stylesheet" type="text/css" />
 </head>
 
-<body>
-<div id="seeMoney">
-<h3>账户余额</h3>
+<body id="seeMoney">
 
+<div id="topM">
+<div id="t"><h3>账户余额</h3></div>
+<div id="r">
+<ul>
+	<li>
+    	<a href="index.html" target="_blank"><div>首页</div></a>
+    </li>
+	<li>
+    	<a href="Buy.html" target="_blank"><div>购票</div></a>
+    </li>
+    <li>
+    	<a href="order.html" target="_blank"><div>查看历史订单</div></a>
+    </li>
+    <li>
+    	<a href="login2.php" target="_self"><div>退出登录</div></a>
+    </li>
+</ul>
+</div>
+</div>
+
+<div id="c">
 <div id="look">
 <p>人民币 &nbsp;&nbsp;
 <?php 
@@ -37,7 +56,7 @@ echo $row['account'];
 <div id="iframe">
 <iframe name="jump"></iframe>
 </div>
-
 </div>
+
 </body>
 </html>
