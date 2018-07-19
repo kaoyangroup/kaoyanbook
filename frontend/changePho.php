@@ -16,8 +16,15 @@ $sql = "select * from user where uid='$uid'";
 $result = mysqli_query($con,$sql);
 $row = mysqli_fetch_array($result);
 $mobile = $row["mobile"];
+echo "<script type='text/javascript'>
+		function validate_mobile(){
+			var re=/^[0-9]{11}$/;   /*定义验证表达式*/
+			if(re.test(mob.textfieldB.value)){return true}
+			else{alert('手机号码格式不正确！');return false}
+		}
+	</script>";
 echo "<p>原手机号：&nbsp;&nbsp;&nbsp;&nbsp;".$mobile."</p>";
-echo "<form action='changePhoSQL.php' method='post'>";
+echo "<form name='mob' action='changePhoSQL.php' method='post' onsubmit='return validate_mobile()'>";
 echo "<p>新手机号：<input type='text' name='textfieldB' /></p>";
 echo "<p>登录密码：<input type='text' name='textfieldC' /></p>";
 echo "<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;正确输入密码才能修改密保</p>";
