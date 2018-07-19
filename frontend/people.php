@@ -42,12 +42,9 @@
         </tr>
       </thead>
       <?php
+      require_once '../backend/includes/dbh.inc.php';
       $uid = $_COOKIE["cur_uid"];
-      $con = mysqli_connect("localhost","root","123456","train");
-      if(!$con)
-      {
-        die('Count not connect');
-      }
+      
       $sql = "select * from Contacts where uid='$uid'";
       $result = mysqli_query($con,$sql);
       while($row = mysqli_fetch_array($result))
