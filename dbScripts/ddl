@@ -1420,7 +1420,7 @@ INSERT INTO `Manage` (`lineId`, `date`) VALUES
 
 
 -------------------Lable Margins-------------------
-INSERT INTO `margins` (`lineId`, `date`, `start`, `end`, `seatType`, `marginTicket`) VALUES
+INSERT INTO `Margins` (`lineId`, `date`, `start`, `end`, `seatType`, `marginTicket`) VALUES
 ('G001', '2018-07-19', '北京', '上海', '卧票', 30),
 ('G001', '2018-07-19', '北京', '上海', '坐票', 80),
 ('G001', '2018-07-19', '北京', '南京', '卧票', 30),
@@ -1529,4 +1529,13 @@ INSERT INTO `margins` (`lineId`, `date`, `start`, `end`, `seatType`, `marginTick
 ('T002', '2018-07-19', '北京', '西宁', '坐票', 80),
 ('T002', '2018-07-19', '西宁', '拉萨', '卧票', 30),
 ('T002', '2018-07-19', '西宁', '拉萨', '坐票', 80);
+
+
+
+
+
+
+
+
+
 

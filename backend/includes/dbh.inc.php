@@ -2,8 +2,8 @@
 
 $dbServer = "localhost";
 $userName = "root";
-$dbPwd = "123456";
-$dbName = "train";
+$dbPwd = "bupt0123";
+$dbName = "kaoyan";
 
 $con = mysqli_connect($dbServer,$userName,$dbPwd,$dbName);
 mysqli_set_charset($con,'utf8');

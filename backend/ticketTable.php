@@ -65,6 +65,7 @@ if ($start == $end){
 	<div class="container">
 		<div class="well">
 			<form class="form-inline" action="javascript:void(0);" id="search_form" role="form">
+                <!--
 		      	<div class="input-group" id="id_search_date" style="width:41%">
 		            <span>选择日期：</span>
 		            <span class="add-on input-group-addon">
@@ -74,13 +75,17 @@ if ($start == $end){
 		            &nbsp;&nbsp;
 		            <button type="button" id="reset" class="btn-sm btn-primary">复位</button>
 		        </div>
+                -->
+
+                <!--
 		        <div class="form-group">
                     <label class="sr-only" for="key_value">关键字</label>
                     <input type="text" class="form-control fa fa-dashboard" id="key_value" name="kw" value="" placeholder="请输入关键字">
                 </div>
 
                 <button type="submit" id="search_submit" class="btn btn-success">搜索</button>
-
+                -->
+                <!--
                 <div style="position:relative; z-index:9999; height:100%; width: 200px; float: right; margin-left: 12px;">
                     <button class="btn btn-default showcol">列段显示/隐藏</button>
                     <ul class="showul" style=" list-style:none; display:none; position:absolute; left:118px; top:10px; background:#FFFFFF; border:1px solid #ccc; width:106px;">
@@ -93,6 +98,7 @@ if ($start == $end){
                         <li><label><input type="checkbox" class="toggle-vis" checked data-column="14"/>硬座价格</label></li>
                     </ul>
                 </div>
+                -->
 	    	</form>
 	    </div>  
 		<table id="DataTable" class="display table table-striped table-bordered">
