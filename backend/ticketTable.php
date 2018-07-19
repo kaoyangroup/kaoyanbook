@@ -30,6 +30,8 @@ if ($start == $end){
 	<script src="js/marco/dataTables.bootstrap.min.js"></script>
 	<script src="js/marco/moment.min.js"></script>
 	<script src="js/marco/daterangepicker.js" charset="UTF-8"></script>
+    
+
 	<style>
 		.classA:hover{ text-decoration:none;}
 		td.highlight {

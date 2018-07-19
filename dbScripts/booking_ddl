@@ -1,4 +1,4 @@
-INSERT INTO `booking` (`ticketId`, `lineId`, `seatId`, `marginCode`, `marginTicket`, `date`) VALUES
+INSERT INTO `Booking` (`ticketId`, `lineId`, `seatId`, `marginCode`, `marginTicket`, `date`) VALUES
 ('000791d61beed0ad6cb39824257838da', 'K003', 'b41e818bb9f940141a8add247c16b3e4', 0x303030000000, 3, '2018-07-22'),
 ('000c71f0ae5ecba728583f3dadb83f0c', 'T001', 'df088245afc30efb95cac1a389485ee1', 0x303000000000, 2, '2018-07-23'),
 ('001107449b1d67589d84a4c6267dff56', 'G001', 'd7308cecd6345e3b545332bd6a5fd199', 0x303030000000, 3, '2018-07-20'),
@@ -440,7 +440,7 @@ INSERT INTO `booking` (`ticketId`, `lineId`, `seatId`, `marginCode`, `marginTick
 ('1e2e55fe3cdf0f33a279d8416438bf01', 'G002', '231aacfb0c9c493740baf8ac6514e55d', 0x303030303000, 5, '2018-07-21'),
 ('1e31651a0f5744c1091d2cd0db2c3906', 'K002', 'c3eb5f66b2d20f98f813bca74e79975e', 0x303030000000, 3, '2018-07-22'),
 ('1e31ec9b39b4929974ea11cb370b3929', 'K001', 'f3874a9b6d15ab5eafdb54778c562959', 0x303030303000, 5, '2018-07-23');
-INSERT INTO `booking` (`ticketId`, `lineId`, `seatId`, `marginCode`, `marginTicket`, `date`) VALUES
+INSERT INTO `Booking` (`ticketId`, `lineId`, `seatId`, `marginCode`, `marginTicket`, `date`) VALUES
 ('1e3f6c8d47976eb657fe44983d114d79', 'K003', 'a63bc9b495e4a72bff9153f8c9bdb49a', 0x303030000000, 3, '2018-07-19'),
 ('1e644bf3aa748aae7ed69b818c1deec1', 'K003', '53300e8aa5acad338ad6bacc8ecc3778', 0x303030000000, 3, '2018-07-22'),
 ('1e8f31fb95d24972cde6d246fb285786', 'K001', '3c4c51aa8a2d28ce1ef665ab91358e9e', 0x303030303000, 5, '2018-07-22'),
@@ -882,7 +882,7 @@ INSERT INTO `booking` (`ticketId`, `lineId`, `seatId`, `marginCode`, `marginTick
 ('3d88f6ca7e5e63b35517109767757600', 'G002', 'a5d839b467ef1b53c06dcf52be6e547e', 0x303030303000, 5, '2018-07-20'),
 ('3d92bc633f7ac5643088d36cd9d41a84', 'G002', 'ccd230de6a931f5e7b314ea86e330c6f', 0x303030303000, 5, '2018-07-23'),
 ('3d94ea1539c8b47d8bdfbbd1e1e0b67f', 'T002', '7f8f497987f15f3809ebf2eae473e567', 0x303000000000, 2, '2018-07-22');
-INSERT INTO `booking` (`ticketId`, `lineId`, `seatId`, `marginCode`, `marginTicket`, `date`) VALUES
+INSERT INTO `Booking` (`ticketId`, `lineId`, `seatId`, `marginCode`, `marginTicket`, `date`) VALUES
 ('3dcc607db5836c48c5ba87cf6eee1af2', 'K001', 'a01bfd7924c39b6a1c5eedbd982dc41a', 0x303030303000, 5, '2018-07-22'),
 ('3ddc4fd3af267c0ea6613a1b5a47613b', 'K003', 'a0e64e87ca97e5a4f2cddeb3696b4c74', 0x303030000000, 3, '2018-07-19'),
 ('3df8a937b44ce71c34a2dc961f731a45', 'G002', '8da6ce55ddd94bba597373af1f26aa2e', 0x303030303000, 5, '2018-07-21'),
@@ -1324,7 +1324,7 @@ INSERT INTO `booking` (`ticketId`, `lineId`, `seatId`, `marginCode`, `marginTick
 ('587ffb2aca9e8d74b98bc0ecbc8e5cee', 'G001', 'cc2d39ea6ad482fbc777d3beba35314c', 0x303030000000, 3, '2018-07-19'),
 ('5898435ddd2c0c8f160e9a12a904fcee', 'G001', '4a410071c9b81b4eb65bc1da273ce0ff', 0x303030000000, 3, '2018-07-20'),
 ('58a419191e71dfe445dc3425028f98e5', 'G001', '8111c834488bbe238a3174bd497c76b7', 0x303030000000, 3, '2018-07-19');
-INSERT INTO `booking` (`ticketId`, `lineId`, `seatId`, `marginCode`, `marginTicket`, `date`) VALUES
+INSERT INTO `Booking` (`ticketId`, `lineId`, `seatId`, `marginCode`, `marginTicket`, `date`) VALUES
 ('5922fbdcab809c98c4fa40128f8c62dd', 'T002', '65277d85c433300b4aa78ed96cb58f7d', 0x303000000000, 2, '2018-07-20'),
 ('5950b2c979a69fb02d412587264fce52', 'G002', '1322e8b32d0c80d9b3d63c59d24c2355', 0x303030303000, 5, '2018-07-21'),
 ('595be01ac117c26f2cb469d4da87a710', 'G002', '7169f5b472c411d52095883b16aaa400', 0x303030303000, 5, '2018-07-20'),
@@ -1766,7 +1766,7 @@ INSERT INTO `booking` (`ticketId`, `lineId`, `seatId`, `marginCode`, `marginTick
 ('77c4f162645cf1de02d749ad7165343a', 'K003', '3666d992c6d5e3e5bd9b945ba526723e', 0x303030000000, 3, '2018-07-19'),
 ('77d057753783e66a100e853f71dc8080', 'G002', '9dacb06d50673a71326f7e1d68fa0ccb', 0x303030303000, 5, '2018-07-23'),
 ('77e393331a17b765656e3ec3bda42a98', 'T002', 'a802312ddac9a92deaa5da8d49040fc7', 0x303000000000, 2, '2018-07-20');
-INSERT INTO `booking` (`ticketId`, `lineId`, `seatId`, `marginCode`, `marginTicket`, `date`) VALUES
+INSERT INTO `Booking` (`ticketId`, `lineId`, `seatId`, `marginCode`, `marginTicket`, `date`) VALUES
 ('77ea7c6d40db2bcfebedd535b15bee4d', 'G002', 'fe2d73114964311d9f147aec5fa30de3', 0x303030303000, 5, '2018-07-21'),
 ('77fe9d6fff099b54fb478d95d0f25cf3', 'T001', 'c2a7b3503af16aa711fda4f7be02f035', 0x303000000000, 2, '2018-07-21'),
 ('781ec79822ccb7737ad239e1e7fab6ca', 'T002', '0afff51246c5b0f3d8b3c19e4aa43897', 0x303000000000, 2, '2018-07-23'),
@@ -2208,7 +2208,7 @@ INSERT INTO `booking` (`ticketId`, `lineId`, `seatId`, `marginCode`, `marginTick
 ('93cbe306887d6224a2cbf304340a7497', 'T002', '373d50f8e59256f7dbbedcfc53b5467c', 0x303000000000, 2, '2018-07-22'),
 ('93cfb8d319f4668764a47525f2404427', 'T001', '78ea0a86d601eea4334d5092950702ab', 0x303000000000, 2, '2018-07-20'),
 ('93e54ef9aab475743a209c6b2412c3e8', 'K002', '12aede99d071dd1f93d7a8469daf9639', 0x303030000000, 3, '2018-07-19');
-INSERT INTO `booking` (`ticketId`, `lineId`, `seatId`, `marginCode`, `marginTicket`, `date`) VALUES
+INSERT INTO `Booking` (`ticketId`, `lineId`, `seatId`, `marginCode`, `marginTicket`, `date`) VALUES
 ('93ec99fc64028d4de4fefe4975d1aefd', 'G002', 'f4726aa14df561816507c669552ddc91', 0x303030303000, 5, '2018-07-23'),
 ('93f185f67ca89490522dffddc5bdb9a6', 'T002', '3a8e4167bb0c463d54f777294a147002', 0x303000000000, 2, '2018-07-21'),
 ('93f29d776c3ec068c1597b0e5beee256', 'G001', 'ad098fe4c06cd5160a85d4324ed06b1f', 0x303030000000, 3, '2018-07-23'),
@@ -2650,7 +2650,7 @@ INSERT INTO `booking` (`ticketId`, `lineId`, `seatId`, `marginCode`, `marginTick
 ('b05c89462a8be7762ec7a613c26da65d', 'K002', '8e2a3c2f38af0bc3a8909a50ff96466d', 0x303030000000, 3, '2018-07-21'),
 ('b065c9dd324a06c6359a4fb2268eb3a1', 'G002', '844b8d1b043ee14f2d032f9dc6e27b91', 0x303030303000, 5, '2018-07-19'),
 ('b076d8f2ad7a76c0359e873d8b4c3f71', 'K003', '0d25d09cda1ac79e02e735587f747803', 0x303030000000, 3, '2018-07-19');
-INSERT INTO `booking` (`ticketId`, `lineId`, `seatId`, `marginCode`, `marginTicket`, `date`) VALUES
+INSERT INTO `Booking` (`ticketId`, `lineId`, `seatId`, `marginCode`, `marginTicket`, `date`) VALUES
 ('b083819f78638a39bea70b4b288f83c6', 'T002', '597faf2c8515476875fd736a1e2ef94c', 0x303000000000, 2, '2018-07-20'),
 ('b093bbe059591d84bf8108ace39914d1', 'G002', '6329b57768faf0a56fe8aa546f2ae8d7', 0x303030303000, 5, '2018-07-20'),
 ('b0946cbba66c19c8d55c4ac85a81e8dc', 'T002', '7f8f497987f15f3809ebf2eae473e567', 0x303000000000, 2, '2018-07-23'),
@@ -3092,7 +3092,7 @@ INSERT INTO `booking` (`ticketId`, `lineId`, `seatId`, `marginCode`, `marginTick
 ('cdbae64204af5a8d2992e79a4769e5bb', 'K002', 'bbc70ff07458a294b01cfc92f1b5cf92', 0x303030000000, 3, '2018-07-19'),
 ('cdc7d88df1f969fdb1561d94ad9f6ae7', 'K002', '1819c5880cba0141a3b815423a3927ff', 0x303030000000, 3, '2018-07-22'),
 ('cdd249ba32090a5aead6083db58fae96', 'K003', 'e7fb67210b5fcdb9d9ddac5ec5da6ffb', 0x303030000000, 3, '2018-07-19');
-INSERT INTO `booking` (`ticketId`, `lineId`, `seatId`, `marginCode`, `marginTicket`, `date`) VALUES
+INSERT INTO `Booking` (`ticketId`, `lineId`, `seatId`, `marginCode`, `marginTicket`, `date`) VALUES
 ('cde31db25e80511f777522d006a3d02f', 'K003', '198b94b8925de47b27a56bbd39a87047', 0x303030000000, 3, '2018-07-20'),
 ('cde4e036d1a5c24e6e5c9d4369909aa4', 'K003', '3e4d0563c73a6729b9cc775034f7611d', 0x303030000000, 3, '2018-07-22'),
 ('cdfdedd9b7dce23234c3c34cccc21a6e', 'G002', 'd4d69a20e19e695fc4001c9cb4fdc143', 0x303030303000, 5, '2018-07-22'),
@@ -3534,7 +3534,7 @@ INSERT INTO `booking` (`ticketId`, `lineId`, `seatId`, `marginCode`, `marginTick
 ('ea175577795ab107f5ec0d1d4df50e7e', 'T001', '4617e739eb95917c2ef5cd9148fe71c4', 0x303000000000, 2, '2018-07-23'),
 ('ea2255fa395a362cb904a668c1f9f19d', 'K003', '53ae76c1edeccd08a77e49e0eea4e5c0', 0x303030000000, 3, '2018-07-20'),
 ('ea2617d2f97d7bf6be994a73a7a3168c', 'K001', 'f1f840c741b5d89b2b1376d2bd6ad9c3', 0x303030303000, 5, '2018-07-22');
-INSERT INTO `booking` (`ticketId`, `lineId`, `seatId`, `marginCode`, `marginTicket`, `date`) VALUES
+INSERT INTO `Booking` (`ticketId`, `lineId`, `seatId`, `marginCode`, `marginTicket`, `date`) VALUES
 ('ea265fa5665cab5469fef098ca268222', 'K001', '2b1a52ad392f77487b5a9bdce1cedae2', 0x303030303000, 5, '2018-07-21'),
 ('ea35b92b37ca51b446e899bded751d55', 'G002', '4527fc042806316d899211fbf0fee89d', 0x303030303000, 5, '2018-07-21'),
 ('ea4640d86b3e89c2978eb4ccd2fb4ccc', 'T002', '4a65c9a22db836a1959999eeb9033a90', 0x303000000000, 2, '2018-07-22'),
