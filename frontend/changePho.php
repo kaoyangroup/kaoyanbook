@@ -26,7 +26,7 @@ echo "<script type='text/javascript'>
 echo "<p>原手机号：&nbsp;&nbsp;&nbsp;&nbsp;".$mobile."</p>";
 echo "<form name='mob' action='changePhoSQL.php' method='post' onsubmit='return validate_mobile()'>";
 echo "<p>新手机号：<input type='text' name='textfieldB' /></p>";
-echo "<p>登录密码：<input type='text' name='textfieldC' /></p>";
+echo "<p>登录密码：<input type='password' name='textfieldC' /></p>";
 echo "<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;正确输入密码才能修改密保</p>";
     
 echo "<div>";

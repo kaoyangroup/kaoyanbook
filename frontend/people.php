@@ -42,24 +42,27 @@
         </tr>
       </thead>
       <?php
-      require_once '../backend/includes/dbh.inc.php';
+	  require_once '../backend/includes/dbh.inc.php';
       $uid = $_COOKIE["cur_uid"];
-      
       $sql = "select * from Contacts where uid='$uid'";
       $result = mysqli_query($con,$sql);
       while($row = mysqli_fetch_array($result))
       {
         $no = $row["cid"];
-        $sql2 = "select * from user where cardNo='$no'";
+        $sql2 = "select * from user where uid='$no'";
         $res = mysqli_query($con,$sql2);
         $r = mysqli_fetch_array($res);
+		$type = '普通';
+		if($r["email"] == '1'){
+			$type = '学生';
+		}
             echo "<tbody>";
             echo  "<tr>";
             echo    "<td>".$r["name"]."</td>";
             echo    "<td>二代身份证</td>";
-            echo    "<td>".$no."</td>";
+            echo    "<td>".$r["cardNo"]."</td>";
             echo    "<td>".$r["mobile"]."</td>";
-            echo    "<td>".$r["email"]."</td>";
+            echo    "<td>".$type."</td>";
             echo  "</tr>";
             echo  "</tbody>";
       }
@@ -71,6 +74,15 @@
         </tr>
       </tfoot>
     </table>
+	<table>
+		<form name='peo' action='addContacts.php' method='post'>
+		<p>姓名： <input type="text" name="name" /></p>
+		<p>身份证号：<input type="text" name="cardNo" /></p>
+		<div> 
+			<input type="submit" value="添加联系人"/>
+		</div>
+		</form>
+	</table>
 	</div>
 
 </body>
