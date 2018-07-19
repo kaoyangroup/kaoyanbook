@@ -101,7 +101,7 @@
 	margin-right: 25px;
 	margin-left: 0px;
 	text-align: center;
-	background-color: #C9F;
+	background-color: #CCC;
 }
 #safe #s #sA #img {
 	height: 200px;
@@ -127,7 +127,7 @@
 	margin-right: 25px;
 	margin-left: 25px;
 	text-align: center;
-	background-color: #C9F;
+	background-color: #CCC;
 }
 #safe #s #word {
 	font-size: 25px;
@@ -150,7 +150,7 @@
 	margin-right: 10px;
 	margin-left: 25px;
 	text-align: center;
-	background-color: #C9F;
+	background-color: #CCC;
 }
 #safe #s #sC #img {
 	height: 200px;
@@ -267,9 +267,9 @@
 	margin-left: 50px;
 	font-family: "微软雅黑";
 	background-color: #CCC;
-	padding-left: 75px;
+	padding-left: 68px;
 	height: 600px;
-	width: 90%;
+	width: 88%;
 }
 #pep #c ul {
 	list-style-type: none;
