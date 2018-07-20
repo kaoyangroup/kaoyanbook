@@ -1,19 +1,15 @@
 
 <?php
-echo "ssss";
-
-
 	include_once "includes/dbh.inc.php";
     session_start();
 if(!isset($_SESSION["lineId"])) echo "2222";
-	$lineId = $_SESSION["lineId"]
-    echo $lineId." ";
+	$lineId = $_SESSION["lineId"];
 	$start = $_SESSION["start"];    
-    echo $start." ";
+    
 	$end = $_SESSION["end"];
-echo $end."";
+
 	$departure_date = $_SESSION["departure_date"];
-echo $departure_date;
+
 	$userId = "marco";
 
 ?>
