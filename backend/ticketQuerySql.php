@@ -193,12 +193,6 @@ while($row = mysqli_fetch_assoc($result)){
             <td>$zuoMargins</td>
             <td>$zuoPrice</td>
             <td><input type='button' id='buttonBooking' value='预订' class='btn btn-success'  onclick='onSubmit()' >
-            	<script type='text/javascript'>
-					function onSubmit(){
-						window.location.href='ticketBooking.html?lineId=' + $lineId + '&departure_date=' + $departure_date + '&start=' + $start + '&end=' + $end;
-					}
-            	</script>
-
             </td>         
         </tr>
     ";
@@ -209,6 +203,13 @@ function onSubmit(){
 					}
 */
 
+?>
+<?php
+	$_SESSION["lineId"] = $lineId;
+	$_SESSION["departure_date"] = $departure_date;
+	$_SESSION["start"] = $start;
+	$_SESSION["end"] = $end;
+    $_SESSION["start_datetime"] = $start_datetime;
 ?>
 
 

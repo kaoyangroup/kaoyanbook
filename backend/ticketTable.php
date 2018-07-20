@@ -2,6 +2,7 @@
 /*
 ----------------------------------------------------------------------------------   车票列表 ------------------------------------------------------------------------------------------
 */
+session_start();
 $start = $_POST["from"];
 $end = $_POST["to"];
 $departure_date = $_POST["departure"];
@@ -11,6 +12,7 @@ if ($start == $end){
     header('Refresh:1,Url=../frontend/ticketQuery.php');
 }
 
+//$_SESSION["start"] = $start;
 ?>
 
 
@@ -63,11 +65,12 @@ if ($start == $end){
 </head>
 
 <body>
-		
+	<nav class="navbar navbar-default "></nav>
 	<div class="container">
+        <!--
 		<div class="well">
 			<form class="form-inline" action="javascript:void(0);" id="search_form" role="form">
-                <!--
+
 		      	<div class="input-group" id="id_search_date" style="width:41%">
 		            <span>选择日期：</span>
 		            <span class="add-on input-group-addon">
@@ -86,8 +89,8 @@ if ($start == $end){
                 </div>
 
                 <button type="submit" id="search_submit" class="btn btn-success">搜索</button>
-                -->
-                <!--
+                
+     
                 <div style="position:relative; z-index:9999; height:100%; width: 200px; float: right; margin-left: 12px;">
                     <button class="btn btn-default showcol">列段显示/隐藏</button>
                     <ul class="showul" style=" list-style:none; display:none; position:absolute; left:118px; top:10px; background:#FFFFFF; border:1px solid #ccc; width:106px;">
@@ -100,12 +103,22 @@ if ($start == $end){
                         <li><label><input type="checkbox" class="toggle-vis" checked data-column="14"/>硬座价格</label></li>
                     </ul>
                 </div>
-                -->
+                
 	    	</form>
-	    </div>  
-		<table id="DataTable" class="display table table-striped table-bordered">
-		    <thead>
-                <tr>
+        
+	    </div>
+        -->
+        <div style="clear:both">
+            <ol class="breadcrumb">
+            当前位置：
+                <li><a href="../frontend/index.html">首页</a></li>
+                <li><a href="../frontend/ticketQuery.php">在线订票</a></li>
+                <li class="active">车次查询</li>
+            </ol>
+        </div>
+    	<table id="DataTable" class="display table table-striped table-bordered">
+    	    <thead>
+                <tr style="background:#64a7af;">
                 <!--	<th><input type="checkbox" name="checklist" id="checkAll"></th>  -->
                     <th>车次</th>
                     <th>出发站</th>
@@ -129,10 +142,14 @@ if ($start == $end){
                     include_once "ticketQuerySql.php";
                 ?>
             </tbody>
-
+        </table>
 	</div>
-	
 </body>
+    <script type='text/javascript'>
+                    function onSubmit(lineId,depart_date,start,end,){
+                        window.location.href='ticketBooking.php';
+                    }
+    </script>
 </html>
 
 

@@ -29,7 +29,7 @@
 
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 
-	 <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -160,7 +160,7 @@
 
 <script>
     $(window).scroll(function () {
-        if ($(".navbar").offset().top > 50) {$(".navbar-fixed-top").addClass("top-nav");
+        if ($(".navbar").offset().top > 10) {$(".navbar-fixed-top").addClass("top-nav");
         }else {$(".navbar-fixed-top").removeClass("top-nav");}
     })
 </script>
