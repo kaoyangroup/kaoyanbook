@@ -48,7 +48,7 @@ for($i = 1; $i <= endSeq+1; $i++)   // i:出发站 j:终点站 seatType:座位�
 //更新Myorder,order订单表
 $uid = "marco";//$_COOKIE["cur_uid"];
 $ticketId = $_SESSION["ticketId"];
-$orderTime = date("Y-m-d h:i:s");
+$orderTime = date("Y-m-d H:i:s");
 echo $orderTime;
 $orderId = md5($uid + $ticketId + $orderTime);
 $start = $_SESSION["start"];

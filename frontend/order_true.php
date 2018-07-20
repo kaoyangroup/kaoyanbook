@@ -140,7 +140,7 @@ body {
                       $goDate = $goDate+1;
                      }
 
-                     $cur_time = date("y-m-d h:i:s");
+                     $cur_time = date("Y-m-d H:i:s");
 
                      echo "<tr>";
                      echo   "<td>&nbsp;&nbsp;&nbsp;&nbsp;".$i."&nbsp;&nbsp;&nbsp;&nbsp;</td>";
@@ -152,7 +152,7 @@ body {
                      echo   "<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".$goDate." ".$arrTime."&nbsp;&nbsp;&nbsp;&nbsp;</td>";
                      echo   "<td>&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;</td>";
                      echo   "<td>&nbsp;&nbsp;&nbsp;&nbsp;".$price."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>";
-                     if(strtotime($goDate."".$arrTime)-strtotime($cur_time) >= 60*30)
+                     if(strtotime($goDate."".$arrTime)-strtotime($cur_time) <= 60*30)
                      {
                       echo "<td>";
                         echo   "<input type='button' id='button2' value='退票'  onclick='Onsubmit()' >";  

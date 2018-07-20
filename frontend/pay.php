@@ -87,8 +87,8 @@
     </table>
    		 <div id="stt">
     		<form id="click" method="post" action="">
-    		 <div id="btn1"><input type="submit" id="button1" value="取消订单"  onclick="Onsubmits()" ><script type="text/javascript">function Onsubmits(){  window.location.href='index.html'}</script></div>
-    		 <div id="btn2"><input type="submit" id="button2" value="确认支付"  onclick="Onsubmits2()" ><script type="text/javascript">function Onsubmits2(){  window.location.href='paysuccess.html'}</script> </div>
+    		 <div id="btn1"><input type="button" id="button1" value="取消订单"  onclick="Onsubmits()" ><script type="text/javascript">function Onsubmits(){  window.location.href='index.html'}</script></div>
+    		 <div id="btn2"><input type="button" id="button2" value="确认支付"  onclick="Onsubmits2()" ><script type="text/javascript">function Onsubmits2(){  window.location.href='paysuccess.php'}</script> </div>
               </form>
 			</div>
 	</div>
