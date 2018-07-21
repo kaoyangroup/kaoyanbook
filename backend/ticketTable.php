@@ -5,6 +5,8 @@
 session_start();
 $start = $_POST["from"];
 $end = $_POST["to"];
+$_SESSION["start"] = $start;
+$_SESSION["end"] = $end;
 $departure_date = $_POST["departure"];
 if ($start == $end){
     $selectErr = "出发地不能和目的地相同!";
@@ -108,6 +110,7 @@ if ($start == $end){
         
 	    </div>
         -->
+        <!-- 异常：可以订已经开过的车 -->
         <div style="clear:both">
             <ol class="breadcrumb">
             当前位置：
@@ -145,11 +148,7 @@ if ($start == $end){
         </table>
 	</div>
 </body>
-    <script type='text/javascript'>
-                    function onSubmit(lineId,depart_date,start,end,){
-                        window.location.href='ticketBooking.php';
-                    }
-    </script>
+    
 </html>
 
 

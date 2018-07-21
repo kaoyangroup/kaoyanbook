@@ -54,7 +54,7 @@ body {
                   <?php
 				  ini_set('date.timezone','Asia/Shanghai');
 				  require_once '../backend/includes/dbh.inc.php';
-                  $uid = $_COOKIE["cur_uid"];
+                  $uid = "风之子";//$_COOKIE["cur_uid"];
                   $i = 0;
                   
                   $sql = "select * from Myorder where userId='$uid'";
@@ -162,12 +162,13 @@ body {
                 echo "<td>";
                 
                    echo   "<input type='button' id='button2' value='继续支付'  onclick='Onsubmits()' ><script type='text/javascript'>";
-                   echo   "function Onsubmits(){  window.location.href='pay.html?orderId='+$orderId;}</script>";
+                   echo   "function Onsubmits(){ var id='$orderId'; window.location.href='pay.php?orderId='+id;}</script>";
 
                    echo   "<input type='button' id='button2' value='取消订单'  onclick='Onsubmit()' >";  
                         echo   "<script type='text/javascript'>
                                 function Onsubmit(){
-                                    window.location.href='order_falseSQL.php?orderId='+$orderId;
+                                    var id='$orderId';
+                                    window.location.href='order_falseSQL.php?orderId='+id;
                                 }
                                 </script>";
                

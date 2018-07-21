@@ -4,6 +4,7 @@
 <html>
 <body>
 <?php 
+session_start();
 function find($conn,$sql2)
 {
 	$re = mysqli_query($conn,$sql2);
@@ -48,6 +49,7 @@ else
 	$sql = "insert into user values('$uid','$pwd','$name','$cardType','$cardNo','$email','$mobile','$userType','$account')";
 	$result = mysqli_query($con,$sql);
 	mysqli_close($con);
+	$_SESSION["cur_uid"] = $uid;
 	setcookie("cur_uid",$uid,time()+3600);
 	header("Location:index.html");
 }

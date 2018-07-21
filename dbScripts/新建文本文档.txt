@@ -1,0 +1,14 @@
+select  LA.lineId as lineId,LA.station as start,LA.arrTime as start_time,LB.station as end,LB.arrTime as end_time,P.seatType as seatType,P.price as price,M.date as departure_time from
+(select lineId,station,arrTime from Line where station='$start' )LA,
+(select lineId,station,arrTime from Line where station='$end')LB,
+(select trainId,trainType from Train)TRAIN,
+(select * from Mileprice)P,
+(select * from Manage)M
+where LA.lineId=LB.lineId and
+      LA.lineId=TRAIN.trainId and
+      TRAIN.trainType=P.lineType and
+      LA.station=P.start and
+      LB.station=P.end and
+      LA.lineId=M.lineId and
+      P.seatType='Œ‘∆±' and
+      M.date='$departure_date'

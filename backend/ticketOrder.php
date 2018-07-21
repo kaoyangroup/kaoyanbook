@@ -8,7 +8,7 @@
 	$start_datetime = $_SESSION["start_datetime"];
     $departure_date = $_SESSION["departure_date"];
     $userName = $_SESSION["userName"];
-    $userId = "marco";
+    $userId = "风之子";//$_SESSION["cur_uid"];
     //后台进行选票操作
     $seatType = $_POST["seatType"];
     $_SESSION["seatType"] = $seatType;
@@ -23,8 +23,8 @@
     echo "<script>alert('$Err')</script>";
     header('Refresh:1,Url=ticketBooking.php');
     }
-    if($seatType == '卧铺') $MyseatType = '卧票';
-    if($seatType == '硬座') $MyseatType = '坐票';
+    if(($seatType == '卧铺') or ($seatType=='一等座'))  $MyseatType = '卧票';
+    if(($seatType == '硬座') or ($seatType=='二等座')) $MyseatType = '坐票';
     include_once "ticketOrderSql.php";
 ?>
 
@@ -89,6 +89,7 @@
                 $res_price = mysqli_query($con,$sql_price);
                 $row_price = mysqli_fetch_array($res_price);
                 $price = $row_price["price"];
+                //echo $seatId;
                 //通过$seatId 查到车厢号和座位号
                 $sql = "select Carriage.carriageNo as cno, Seat.seatNo as sno from Seat natural join Carriage  where Seat.seatId='$seatId'";
                 $re = mysqli_query($con,$sql);
@@ -117,7 +118,7 @@
     <form name="formSeatType" method="post"  enctype="multipart/form-data" action="ticketOrderUpdate.php">
         <div style="background:#eee;height:4em;">
             <div style="float:right;padding:1em 2em ">
-                <input type="submit" name="Submit" value="确认并支付" class="btn btn-success"> 
+           ticketBookingSql     <input type="submit" name="Submit" value="确认并支付" class="btn btn-success"> 
             </div>
         </div>           
     </form> 

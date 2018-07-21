@@ -25,7 +25,7 @@ select C.carriageType from
 
 */
 $curr_date = date("Y-m-d");
-$curr_time = time("H-m-s");
+$curr_time = time("H-i-s");
 //-------------------------------得到出发地边号 startSeq
 $sql = "select arrOrder from Line where lineId='$lineId' and station='$start' ";
 $result = mysqli_query($con,$sql);
@@ -41,10 +41,11 @@ while($row = mysqli_fetch_assoc($result)){
 }
 
 //--------------------------------当前区间占用几张票 ticketNeed
-$ticketNeed = $sendSeq - $startSeq + 1;
+$ticketNeed = $endSeq - $startSeq + 1;
 
 //从Booking表中查找可用座位,更新
 //$departure_date = '2018-07-20';
+//优化处理：先查询余票表，如果余票表显示余票为0，那么不需要对订票表进行检索，直接显示无可选座位
 $sql = "select * from Booking where lineId='$lineId' and date='$departure_date'
                           order by marginTicket";
 $result = mysqli_query($con,$sql);
@@ -55,13 +56,14 @@ while($row = mysqli_fetch_array($result)){
     $ticketId = $row["ticketId"];
     $seatId = $row["seatId"];
     //跳过类型不匹配的座位
-    $sql = "
+    /*$sql = "
         select Crg.carriageType as ctype from 
         (select carriageId,carriageType from Carriage )Crg,
         (select seatId,carriageId from Seat)SEAT where
         SEAT.seatId = '$seatId' and 
         Crg.carriageId = SEAT.carriageId
-     ";
+     ";*/
+     $sql = "select  carriageType as ctype from Carriage natural join Seat where Seat.seatId='$seatId'";
     $re = mysqli_query($con,$sql);
     while($row = mysqli_fetch_assoc($re)){
        $ctype = $row["ctype"];
@@ -79,11 +81,10 @@ while($row = mysqli_fetch_array($result)){
     if($marginTicket < $ticketNeed){   //余票数量 < ticketNeed
         continue;    
     }
-
     $tag=true;
     $len = strlen($marginCode);
     for( $i = $startSeq; $i <= $endSeq; $i++){
-        if($marginCode[$i] == '1'){
+        if($marginCode[$i-1] == "1"){
             $tag = false;
             break;        
         }    
@@ -94,7 +95,6 @@ while($row = mysqli_fetch_array($result)){
     //当前记录表示的座位可选,退出循环
     break;
 }
-
 //--------------------------------------把seatId放到SESSION中去
 $_SESSION["seatId"] = $seatId;
 $_SESSION["ticketId"] = $ticketId;

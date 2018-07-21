@@ -2,7 +2,7 @@
 
 $dbServer = "localhost";
 $userName = "root";
-$dbPwd = "bupt0123";
+$dbPwd = "123456";
 $dbName = "kaoyan";
 
 $con = mysqli_connect($dbServer,$userName,$dbPwd,$dbName);

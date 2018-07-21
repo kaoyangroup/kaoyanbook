@@ -5,7 +5,7 @@
     $ticketId = $_SESSION["ticketId"];
     
     $price = $_SESSION["price"];
-    $uid = "marco";
+    $uid = "风之子";//$_COOKIE["cur_uid"];
     $sql_order = "update Order1 set orderType=1 where ticketId='$ticketId'";
     mysqli_query($con,$sql_order);
     $sql_user = "update user set account=account-'$price' where uid='$uid'";

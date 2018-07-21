@@ -1,6 +1,7 @@
 <html>
 <body>
 <?php 
+session_start();
 require_once '../backend/includes/dbh.inc.php';
 $uid = $_POST["Userame"];
 $pwd = $_POST["Password"];
@@ -10,6 +11,7 @@ $result = mysqli_query($con,$sql);
 $num=mysqli_num_rows($result);
 if($num > 0)
 {
+
 	setcookie("cur_uid",$uid,time()+3600);
 	header("Location:index.html");
 }

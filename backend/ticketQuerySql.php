@@ -67,7 +67,7 @@ while($row = mysqli_fetch_assoc($result)){
     $firstZuoPrice="--";
     $secondZuoPrice="--";
     $woMargins="--"; // 普快 | 特快
-    $zuoMagins="--";    
+    $zuoMargins="--";    
     $woPrice="--";
     $zuoPrice="--"; 
     //echo "<tr><td>$lineId</td></tr>";
@@ -174,7 +174,7 @@ while($row = mysqli_fetch_assoc($result)){
     }
     $start_datetime = "$departure_date "."$start_time";
     $end_datetime = "$end_date "."$end_time";
-    $duratino_datetime = "";
+    $duration_datetime = "";
     //向table中填写获得的数据 
     echo "
         <tr>
@@ -183,7 +183,7 @@ while($row = mysqli_fetch_assoc($result)){
             <td>$start_datetime</td> 
             <td>$end</td>
             <td>$end_datetime</td>
-            <td>$duration_time </td>
+            <td>$duration_datetime </td>
             <td>$firstZuoMargins</td>
             <td>$firstZuoPrice</td>
             <td>$secondZuoMargins</td>
@@ -193,6 +193,12 @@ while($row = mysqli_fetch_assoc($result)){
             <td>$zuoMargins</td>
             <td>$zuoPrice</td>
             <td><input type='button' id='buttonBooking' value='预订' class='btn btn-success'  onclick='onSubmit()' >
+            <script type='text/javascript'>
+                    function onSubmit(){
+                        var id='$lineId';
+                        window.location.href='ticketBooking.php?lineId='+id;
+                    }
+    </script>
             </td>         
         </tr>
     ";
@@ -205,11 +211,14 @@ function onSubmit(){
 
 ?>
 <?php
+if($num == 1)
+{
 	$_SESSION["lineId"] = $lineId;
 	$_SESSION["departure_date"] = $departure_date;
 	$_SESSION["start"] = $start;
 	$_SESSION["end"] = $end;
     $_SESSION["start_datetime"] = $start_datetime;
+  }
 ?>
 
 

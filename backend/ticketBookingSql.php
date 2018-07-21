@@ -47,6 +47,7 @@ $ticketNeed = $sendSeq - $startSeq + 1;
 $sql = "select * from Booking where lineId='$lineId' and date='$ticket_date'
                           order by marginTicket";
 $result = mysqli_query($con,$sql);
+echo mysqli_num_rows($result);
 while($row = mysqli_fetch_assoc($result)){
     $marginCode = $row["marginCode"];
     $marginTicket = $row["marginTicket"];
@@ -58,7 +59,7 @@ while($row = mysqli_fetch_assoc($result)){
     $tag=true;
     $len = strlen($marginCode);
     for(int $i = $startSeq; $i <= $endSeq; $i++){
-        if($marginCode[$i] == '1'){
+        if($marginCode[$i-1] == '1'){
             $tag = false;
             break;        
         }    

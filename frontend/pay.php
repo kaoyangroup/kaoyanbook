@@ -55,7 +55,7 @@
         <?php 
            session_start();
            require_once '../backend/includes/dbh.inc.php';
-           $uid = "marco";//$_COOKIE['cur_uid'];
+           $uid = "风之子";//$_SESSION["cur_uid"];//$_COOKIE['cur_uid'];
            $lineId = $_SESSION["lineId"];
            $carriageNo = $_SESSION["carriageNo"];
            $sql = "select * from user where uid = '$uid'";

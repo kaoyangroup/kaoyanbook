@@ -5,12 +5,17 @@
 if(!isset($_SESSION["lineId"])) echo "2222";
 	$lineId = $_SESSION["lineId"];
 	$start = $_SESSION["start"];    
-    
+    if(isset($_GET["lineId"]))
+    {
+         $lineId = $_GET["lineId"];
+         $_SESSION["lineId"] = $lineId;
+    }
 	$end = $_SESSION["end"];
 
 	$departure_date = $_SESSION["departure_date"];
 
-	$userId = "marco";
+	$userId = "风之子";//$_SESSION["cur_uid"];
+    //echo $userId."<br>";
 
 ?>
 

@@ -1,7 +1,7 @@
 <?php 
 
 require_once '../backend/order_back.php';
-$uid = $_COOKIE["cur_uid"];
+$uid ="风之子";//$_COOKIE["cur_uid"];
 if(isset($_GET["orderId"]))
 	$orderId = $_GET["orderId"];
 update($orderId,$uid,0);

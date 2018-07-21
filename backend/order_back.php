@@ -1,10 +1,11 @@
 <?php
 function update($orderId,$uid,$f)
 {
+	session_start();
 	$dbServer = "localhost";
 $userName = "root";
 $dbPwd = "123456";
-$dbName = "train";
+$dbName = "kaoyan";
 
 $con = mysqli_connect($dbServer,$userName,$dbPwd,$dbName);
 mysqli_set_charset($con,'utf8');
@@ -21,7 +22,7 @@ if(!$con){
 	$to = $row_order["end"];
 
 	//Myorder
-	$uid = $_COOKIE["cur_uid"];
+	$uid = "风之子";//$_SESSION["cur_uid"];//$_COOKIE["cur_uid"];
 
 	//Booking
 	$sql_booking = "select * from Booking where ticketId='$ticketId'";
@@ -88,7 +89,7 @@ if(!$con){
 	mysqli_query($con,$sql_update_booking);
 
 	//Margins
-	$sql_update_margins = "update Margins set marginTicket=marginTicket+1 where lineId='$lineId' and date='$goDate' and start='$from' and end='$to'";
+	$sql_update_margins = "update Margins set marginTicket=marginTicket+1 where lineId='$lineId' and date='$goDate' and start='$from' and end='$to' and seatType='$carriageType'";
 	mysqli_query($con,$sql_update_margins);
 
 	//update myorder

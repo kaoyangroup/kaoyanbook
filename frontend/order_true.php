@@ -55,7 +55,7 @@ body {
                    <?php
                    ini_set('date.timezone','Asia/Shanghai');
                   
-                  $uid = $_COOKIE["cur_uid"];
+                  $uid = "风之子";//$_COOKIE["cur_uid"];
                   $i = 0;
                   require_once '../backend/includes/dbh.inc.php';
 
@@ -152,15 +152,11 @@ body {
                      echo   "<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".$goDate." ".$arrTime."&nbsp;&nbsp;&nbsp;&nbsp;</td>";
                      echo   "<td>&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;</td>";
                      echo   "<td>&nbsp;&nbsp;&nbsp;&nbsp;".$price."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>";
-                     if(strtotime($goDate."".$arrTime)-strtotime($cur_time) <= 60*30)
+                     if(strtotime($goDate."".$arrTime)-strtotime($cur_time) >= 60*30)
                      {
                       echo "<td>";
                         echo   "<input type='button' id='button2' value='退票'  onclick='Onsubmit()' >";  
-                        echo   "<script type='text/javascript'>
-                                function Onsubmit(){
-                                    window.location.href='order_trueSQL.php?orderId='+$orderId;
-                                }
-                                </script>";
+                        echo   "<script type='text/javascript'>function Onsubmit(){var id='$orderId';window.location.href='order_trueSQL.php?orderId='+id;}</script>";
                         echo "</td>";
                     }
                      echo "</tr>";
